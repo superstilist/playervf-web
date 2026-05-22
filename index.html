@@ -3,30 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PlayerVF - Download</title>
-  <meta name="description" content="Download PlayerVF for Windows or Android. Get the latest stable release or try the new-gen beta.">
-  <meta name="theme-color" content="#07080b">
-  <meta property="og:title" content="PlayerVF Download">
-  <meta property="og:description" content="Official Windows and Android downloads for PlayerVF.">
-  <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>PlayerVF Downloads</title>
+  <meta name="description" content="Download PlayerVF for Windows and Android. Latest and new-gen beta builds from the official GitHub download file.">
+  <meta name="theme-color" content="#08090c">
   <style>
     :root {
       color-scheme: dark;
-      --bg: #07080b;
-      --panel: #101217;
-      --panel-2: #151821;
-      --text: #f5f7fb;
-      --muted: #9ba3b4;
-      --soft: #c8ceda;
-      --line: rgba(255, 255, 255, .1);
-      --accent: #7cf7c8;
-      --accent-2: #8bb8ff;
-      --shadow: 0 30px 80px rgba(0, 0, 0, .35);
+      --bg: #08090c;
+      --panel: #111319;
+      --panel-soft: #171a22;
+      --text: #f7f8fb;
+      --muted: #9aa2b1;
+      --line: #252936;
+      --accent: #72f0bd;
       --radius: 8px;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     * {
@@ -40,12 +31,8 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background:
-        radial-gradient(circle at 50% -12rem, rgba(124, 247, 200, .18), transparent 34rem),
-        radial-gradient(circle at 88% 16rem, rgba(139, 184, 255, .12), transparent 30rem),
-        var(--bg);
+      background: var(--bg);
       color: var(--text);
-      font-family: Inter, system-ui, sans-serif;
     }
 
     a {
@@ -53,122 +40,58 @@
       text-decoration: none;
     }
 
-    .shell {
-      width: min(1060px, calc(100% - 40px));
+    .wrap {
+      width: min(980px, calc(100% - 32px));
       margin: 0 auto;
     }
 
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
+    header {
       border-bottom: 1px solid var(--line);
-      background: rgba(7, 8, 11, .78);
-      backdrop-filter: blur(18px);
     }
 
-    .nav-inner {
+    .nav {
       min-height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 16px;
     }
 
     .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
+      font-size: 18px;
       font-weight: 800;
-      letter-spacing: 0;
+      letter-spacing: .2px;
     }
 
-    .mark {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      border-radius: var(--radius);
-      background: #f5f7fb;
-      color: #07080b;
-    }
-
-    svg {
-      width: 19px;
-      height: 19px;
-      stroke-width: 2;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
+    .nav a {
       color: var(--muted);
       font-size: 14px;
       font-weight: 700;
     }
 
-    .nav-links a:hover {
+    .nav a:hover {
       color: var(--text);
     }
 
-    .button {
-      min-height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 0 18px;
-      border: 1px solid transparent;
-      border-radius: var(--radius);
-      background: var(--text);
-      color: #07080b;
-      font-weight: 800;
-      white-space: nowrap;
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 34px rgba(124, 247, 200, .14);
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: var(--text);
-      border-color: var(--line);
-    }
-
-    .button.secondary:hover {
-      border-color: rgba(255, 255, 255, .28);
-      background: rgba(255, 255, 255, .05);
+    main {
+      padding: 82px 0 64px;
     }
 
     .hero {
-      padding: 102px 0 62px;
-      text-align: center;
+      max-width: 760px;
+      margin-bottom: 44px;
     }
 
-    .eyebrow {
+    .tag {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      min-height: 32px;
-      padding: 0 12px;
+      min-height: 30px;
+      padding: 0 11px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255, 255, 255, .05);
-      color: var(--soft);
+      color: var(--accent);
       font-size: 13px;
       font-weight: 800;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 5px rgba(124, 247, 200, .1);
     }
 
     h1,
@@ -179,219 +102,78 @@
     }
 
     h1 {
-      max-width: 780px;
-      margin: 22px auto 18px;
-      font-size: clamp(46px, 8vw, 88px);
-      line-height: .92;
-      letter-spacing: 0;
+      margin: 18px 0 16px;
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: .95;
+      letter-spacing: -1px;
     }
 
     .lead {
-      max-width: 660px;
-      margin: 0 auto 30px;
+      max-width: 640px;
+      margin-bottom: 26px;
       color: var(--muted);
-      font-size: clamp(17px, 2vw, 20px);
+      font-size: 18px;
       line-height: 1.65;
     }
 
     .hero-actions {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 18px;
     }
 
-    .trust {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .trust span {
+    .button {
+      min-height: 50px;
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-    }
-
-    .trust b {
-      color: var(--accent);
-    }
-
-    section {
-      padding: 58px 0;
-    }
-
-    .preview-card {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .035));
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .preview-top {
-      height: 52px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      justify-content: center;
       padding: 0 18px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .preview-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, .28);
-    }
-
-    .preview-body {
-      display: grid;
-      grid-template-columns: .82fr 1.18fr;
-      gap: 18px;
-      padding: 24px;
-    }
-
-    .mock-list,
-    .mock-main {
-      display: grid;
-      gap: 12px;
-      align-content: start;
-    }
-
-    .mock-line,
-    .mock-tile,
-    .mock-hero {
+      border: 1px solid transparent;
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, .08);
+      background: var(--text);
+      color: var(--bg);
+      font-weight: 800;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      white-space: nowrap;
     }
 
-    .mock-line {
-      height: 42px;
+    .button:hover {
+      transform: translateY(-2px);
     }
 
-    .mock-line.active {
-      background: linear-gradient(90deg, rgba(124, 247, 200, .28), rgba(139, 184, 255, .16));
-      border: 1px solid rgba(124, 247, 200, .24);
+    .button.secondary {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--text);
     }
 
-    .mock-hero {
-      min-height: 178px;
-      background:
-        linear-gradient(135deg, rgba(124, 247, 200, .9), rgba(139, 184, 255, .75)),
-        #202635;
-      position: relative;
-      overflow: hidden;
+    .button.secondary:hover {
+      border-color: #3a4050;
+      background: var(--panel-soft);
     }
 
-    .mock-hero::after {
-      content: "";
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 24px;
-      height: 42px;
-      border-radius: 999px;
-      background: rgba(7, 8, 11, .34);
-    }
-
-    .mock-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .mock-tile {
-      aspect-ratio: 1.35;
-    }
-
-    .section-head {
-      max-width: 680px;
-      margin: 0 auto 28px;
-      text-align: center;
-    }
-
-    h2 {
-      margin-bottom: 12px;
-      font-size: clamp(30px, 4vw, 46px);
-      line-height: 1.05;
-      letter-spacing: 0;
-    }
-
-    .section-head p {
-      margin-bottom: 0;
+    .section-title {
+      margin: 0 0 18px;
       color: var(--muted);
-      line-height: 1.65;
-      font-size: 17px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .feature,
-    .download-group {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, .045);
-    }
-
-    .feature {
-      min-height: 170px;
-      padding: 22px;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
-    }
-
-    .feature:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, .24);
-      background: rgba(255, 255, 255, .065);
-    }
-
-    .icon {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 18px;
-      border-radius: var(--radius);
-      background: rgba(124, 247, 200, .12);
-      color: var(--accent);
-    }
-
-    h3 {
-      margin-bottom: 9px;
-      font-size: 18px;
-      letter-spacing: 0;
-    }
-
-    .feature p,
-    .download-copy,
-    .download-card p {
-      margin-bottom: 0;
-      color: var(--muted);
-      line-height: 1.6;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
     .downloads {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
       gap: 18px;
     }
 
     .download-group {
       padding: 24px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, .18);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
     }
 
-    .group-top {
+    .group-head {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
@@ -399,56 +181,67 @@
       margin-bottom: 18px;
     }
 
-    .tag {
+    .group-head h2 {
+      margin-bottom: 6px;
+      font-size: 28px;
+      letter-spacing: -.3px;
+    }
+
+    .group-head p {
+      margin-bottom: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .badge {
       display: inline-flex;
       align-items: center;
       min-height: 28px;
       padding: 0 10px;
       border-radius: 999px;
-      background: rgba(124, 247, 200, .1);
+      background: rgba(114, 240, 189, .1);
       color: var(--accent);
       font-size: 12px;
       font-weight: 800;
       white-space: nowrap;
     }
 
-    .beta .tag {
-      background: rgba(139, 184, 255, .12);
-      color: var(--accent-2);
-    }
-
-    .download-options {
+    .download-list {
       display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 12px;
     }
 
     .download-card {
-      display: grid;
-      grid-template-columns: 1fr auto;
+      display: flex;
       align-items: center;
-      gap: 16px;
+      justify-content: space-between;
+      gap: 14px;
       padding: 16px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, .04);
+      background: #0d0f14;
     }
 
     .download-card h3 {
-      display: flex;
-      align-items: center;
-      gap: 10px;
       margin-bottom: 4px;
+      font-size: 18px;
     }
 
-    .repo-note {
-      margin: 18px 0 0;
-      text-align: center;
+    .download-card p {
+      margin-bottom: 0;
       color: var(--muted);
       font-size: 14px;
-      font-weight: 700;
     }
 
-    .repo-note a {
+    .note {
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .note a {
       color: var(--text);
       text-decoration: underline;
       text-underline-offset: 3px;
@@ -456,83 +249,40 @@
     }
 
     footer {
+      padding: 28px 0 38px;
       border-top: 1px solid var(--line);
-      padding: 30px 0 40px;
       color: var(--muted);
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
       font-size: 14px;
-      font-weight: 700;
     }
 
-    .footer-links a:hover {
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-row a {
       color: var(--text);
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .65s ease, transform .65s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition-duration: .001ms !important;
-        animation-duration: .001ms !important;
+    @media (max-width: 720px) {
+      main {
+        padding-top: 58px;
       }
 
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .nav-links {
-        display: none;
+      .group-head {
+        flex-direction: column;
       }
 
-      .preview-body,
-      .features,
-      .downloads {
+      .download-list {
         grid-template-columns: 1fr;
       }
-
-      .mock-list {
-        display: none;
-      }
     }
 
-    @media (max-width: 580px) {
-      .shell {
-        width: min(100% - 28px, 1060px);
-      }
-
-      .nav .button {
+    @media (max-width: 520px) {
+      .nav a {
         display: none;
-      }
-
-      .hero {
-        padding: 76px 0 44px;
       }
 
       .hero-actions,
@@ -542,229 +292,98 @@
       }
 
       .download-card {
-        grid-template-columns: 1fr;
-      }
-
-      .download-card .button {
-        min-height: 52px;
-      }
-
-      .mock-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .mock-tile {
-        aspect-ratio: 2.2;
-      }
-
-      .group-top,
-      .footer-inner {
-        align-items: flex-start;
+        align-items: stretch;
         flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
-  <nav class="nav" aria-label="Primary navigation">
-    <div class="shell nav-inner">
-      <a class="brand" href="#top" aria-label="PlayerVF home">
-        <span class="mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-        <span>PlayerVF</span>
-      </a>
-      <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#download">Download</a>
-      </div>
-      <a class="button" href="#download">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-        Download
-      </a>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">PlayerVF</div>
+      <a href="#downloads">Downloads</a>
     </div>
-  </nav>
+  </header>
 
-  <main id="top">
+  <main class="wrap">
     <section class="hero">
-      <div class="shell reveal">
-        <span class="eyebrow"><span class="dot"></span> Official Windows and Android downloads</span>
-        <h1>Download PlayerVF.</h1>
-        <p class="lead">A clean music and video player for your local library, playlists, lyrics, YouTube Music, and easy sharing.</p>
-        <div class="hero-actions">
-          <a class="button" href="#download">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-            Download Latest
-          </a>
-          <a class="button secondary" href="#new-gen">Try New-gen Beta</a>
-        </div>
-        <div class="trust">
-          <span><b>✓</b> Secure GitHub downloads</span>
-          <span><b>✓</b> Latest release</span>
-          <span><b>✓</b> Beta build available</span>
-        </div>
+      <span class="tag">Official download file</span>
+      <h1>Download PlayerVF.</h1>
+      <p class="lead">Simple download page for PlayerVF. Choose the latest build, or try the new-gen beta build.</p>
+      <div class="hero-actions">
+        <a class="button" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.exe">Latest Windows</a>
+        <a class="button secondary" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.apk">Latest Android</a>
       </div>
     </section>
 
-    <section aria-label="Preview">
-      <div class="shell">
-        <div class="preview-card reveal">
-          <div class="preview-top" aria-hidden="true">
-            <span class="preview-dot"></span>
-            <span class="preview-dot"></span>
-            <span class="preview-dot"></span>
-          </div>
-          <div class="preview-body" aria-hidden="true">
-            <div class="mock-list">
-              <span class="mock-line active"></span>
-              <span class="mock-line"></span>
-              <span class="mock-line"></span>
-              <span class="mock-line"></span>
+    <section id="downloads">
+      <p class="section-title">Downloads</p>
+      <div class="downloads">
+        <article class="download-group">
+          <div class="group-head">
+            <div>
+              <h2>latest</h2>
+              <p>Latest stable download from the repository download file.</p>
             </div>
-            <div class="mock-main">
-              <span class="mock-hero"></span>
-              <div class="mock-grid">
-                <span class="mock-tile"></span>
-                <span class="mock-tile"></span>
-                <span class="mock-tile"></span>
+            <span class="badge">Latest</span>
+          </div>
+          <div class="download-list">
+            <div class="download-card">
+              <div>
+                <h3>Windows</h3>
+                <p>playervf.exe</p>
               </div>
+              <a class="button" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.exe">Download</a>
+            </div>
+            <div class="download-card">
+              <div>
+                <h3>Android</h3>
+                <p>playervf.apk</p>
+              </div>
+              <a class="button" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.apk">Download</a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <section id="features">
-      <div class="shell">
-        <div class="section-head reveal">
-          <h2>What it does</h2>
-          <p>Short, simple features from the PlayerVF app.</p>
-        </div>
-        <div class="features">
-          <article class="feature reveal">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
-            <h3>Music and video</h3>
-            <p>Play your local songs and videos in one clean app.</p>
-          </article>
-          <article class="feature reveal">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h10"/></svg></div>
-            <h3>Playlists and favorites</h3>
-            <p>Keep favorite tracks, playlists, recent music, and daily mixes close.</p>
-          </article>
-          <article class="feature reveal">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></div>
-            <h3>Lyrics</h3>
-            <p>Read synced lyrics, search online, or add your own lyrics.</p>
-          </article>
-          <article class="feature reveal">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m10 15 5.19-3L10 9z"/><rect x="3" y="5" width="18" height="14" rx="4"/></svg></div>
-            <h3>YouTube Music</h3>
-            <p>Search, stream, and download music or video from inside the app.</p>
-          </article>
-          <article class="feature reveal">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98"/><path d="m15.41 6.51-6.82 3.98"/></svg></div>
-            <h3>Easy sharing</h3>
-            <p>Share songs or sync your library across nearby devices.</p>
-          </article>
-          <article class="feature reveal">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3a9 9 0 0 0 0 18 9 9 0 0 0 0-18z"/><path d="M12 3v18"/></svg></div>
-            <h3>Custom look</h3>
-            <p>Choose themes, colors, layout, and visual effects that fit you.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="download">
-      <div class="shell">
-        <div class="section-head reveal">
-          <h2>Downloads</h2>
-          <p>Latest stable release and new-gen beta from the official repository download file.</p>
-        </div>
-        <div class="downloads">
-          <article class="download-group reveal">
-            <div class="group-top">
+        <article class="download-group">
+          <div class="group-head">
+            <div>
+              <h2>new-gen(betav3)</h2>
+              <p>Beta download build from the repository download file.</p>
+            </div>
+            <span class="badge">Beta</span>
+          </div>
+          <div class="download-list">
+            <div class="download-card">
               <div>
-                <h3>Latest</h3>
-                <p class="download-copy">Stable Release_V1 build.</p>
+                <h3>Windows</h3>
+                <p>playervf.exe</p>
               </div>
-              <span class="tag">Recommended</span>
+              <a class="button secondary" href="https://github.com/superstilist/PlayerVf/releases/download/betav3/playervf.exe">Download</a>
             </div>
-            <div class="download-options">
-              <div class="download-card">
-                <div>
-                  <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg>Windows</h3>
-                  <p>playervf.exe</p>
-                </div>
-                <a class="button" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.exe">Download</a>
-              </div>
-              <div class="download-card">
-                <div>
-                  <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M9 2v2"/><path d="M15 2v2"/></svg>Android</h3>
-                  <p>playervf.apk</p>
-                </div>
-                <a class="button" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.apk">Download</a>
-              </div>
-            </div>
-          </article>
-
-          <article id="new-gen" class="download-group beta reveal">
-            <div class="group-top">
+            <div class="download-card">
               <div>
-                <h3>New-gen beta v3</h3>
-                <p class="download-copy">Preview build for testing the next version.</p>
+                <h3>Android</h3>
+                <p>playervf.apk</p>
               </div>
-              <span class="tag">Beta</span>
+              <a class="button secondary" href="https://github.com/superstilist/PlayerVf/releases/download/betav3/playervf.apk">Download</a>
             </div>
-            <div class="download-options">
-              <div class="download-card">
-                <div>
-                  <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg>Windows</h3>
-                  <p>playervf.exe</p>
-                </div>
-                <a class="button secondary" href="https://github.com/superstilist/PlayerVf/releases/download/betav3/playervf.exe">Download</a>
-              </div>
-              <div class="download-card">
-                <div>
-                  <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M9 2v2"/><path d="M15 2v2"/></svg>Android</h3>
-                  <p>playervf.apk</p>
-                </div>
-                <a class="button secondary" href="https://github.com/superstilist/PlayerVf/releases/download/betav3/playervf.apk">Download</a>
-              </div>
-            </div>
-          </article>
-        </div>
-        <p class="repo-note">Download source: <a href="https://github.com/superstilist/PlayerVf/blob/master/download">github.com/superstilist/PlayerVf/blob/master/download</a></p>
+          </div>
+        </article>
       </div>
+
+      <p class="note">Names and links are based on the repository file:
+        <a href="https://github.com/superstilist/PlayerVf/blob/master/download">github.com/superstilist/PlayerVf/blob/master/download</a>
+      </p>
     </section>
   </main>
 
   <footer>
-    <div class="shell footer-inner">
-      <a class="brand" href="#top">
-        <span class="mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-        <span>PlayerVF</span>
-      </a>
-      <div class="footer-links">
-        <a href="https://github.com/superstilist/PlayerVf">GitHub</a>
-        <a href="https://github.com/superstilist/PlayerVf/blob/master/download">Download file</a>
-      </div>
+    <div class="wrap footer-row">
+      <span>PlayerVF</span>
+      <a href="https://github.com/superstilist/PlayerVf">GitHub repository</a>
     </div>
   </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.14 });
-
-    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
-  </script>
 </body>
 </html>
