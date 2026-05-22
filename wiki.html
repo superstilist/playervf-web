@@ -27,7 +27,7 @@
       <p class="lead">This page expands the wiki using the full feature document plus the real source structure in <code>lib</code>. It documents the app areas, files, classes, responsibilities, and the main functions used by each part.</p>
       <div class="doc-stats" aria-label="Documentation summary">
         <div class="doc-stat">
-          <strong>11</strong>
+          <strong>12</strong>
           <span>Main wiki sections</span>
         </div>
         <div class="doc-stat">
@@ -49,6 +49,7 @@
       <aside class="toc" aria-label="Wiki sections">
         <strong>Documentation</strong>
         <a href="#overview">Overview</a>
+        <a href="#repo-stats">Repository stats</a>
         <a href="#architecture">Architecture</a>
         <a href="#models">Models</a>
         <a href="#main">Main app</a>
@@ -70,6 +71,66 @@
             <div class="mini"><strong>State style</strong><span>Provider and ChangeNotifier are used for app settings, player state, library updates, and page changes.</span></div>
             <div class="mini"><strong>Playback stack</strong><span>Media playback uses media_kit, media_kit_video, just_audio/audio_service integration, and Windows SMTC support.</span></div>
             <div class="mini"><strong>Helpers</strong><span>Python code supports YouTube Music, downloads, thumbnails, subtitles, tagging, and media metadata work.</span></div>
+          </div>
+        </section>
+
+        <section id="repo-stats" class="card">
+          <h2>Repository stats</h2>
+          <p>These numbers come from a fresh scan of <code>superstilist/PlayerVf</code> on GitHub: language percentages use GitHub byte totals, while file, character, and line counts use a shallow clone of the remote <code>master</code> branch at commit <code>a045995</code>.</p>
+          <div class="grid stats-grid">
+            <div class="mini stat-tile">
+              <strong>Dart</strong>
+              <span class="stat-number">90.25%</span>
+              <span>791,200 language bytes on GitHub.</span>
+            </div>
+            <div class="mini stat-tile">
+              <strong>Python</strong>
+              <span class="stat-number">9.75%</span>
+              <span>85,432 language bytes on GitHub.</span>
+            </div>
+            <div class="mini stat-tile">
+              <strong>Tracked files</strong>
+              <span class="stat-number">85</span>
+              <span>1,040,612 total tracked bytes; 59 files are text.</span>
+            </div>
+            <div class="mini stat-tile">
+              <strong>Text size</strong>
+              <span class="stat-number">949,566</span>
+              <span>Text characters across tracked remote source files, with 27,565 lines.</span>
+            </div>
+          </div>
+          <h3>Largest tracked extension groups</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Extension</th>
+                  <th>Files</th>
+                  <th>Bytes</th>
+                  <th>Characters</th>
+                  <th>Lines</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>.dart</code></td><td>47</td><td>814,895</td><td>814,785</td><td>23,742</td></tr>
+                <tr><td><code>.png</code></td><td>26</td><td>90,936</td><td>0</td><td>0</td></tr>
+                <tr><td><code>.py</code></td><td>3</td><td>87,745</td><td>87,745</td><td>2,316</td></tr>
+                <tr><td><code>.lock</code></td><td>1</td><td>32,748</td><td>32,748</td><td>1,051</td></tr>
+                <tr><td><code>.gitignore</code></td><td>1</td><td>6,330</td><td>6,330</td><td>164</td></tr>
+                <tr><td><code>.yaml</code></td><td>2</td><td>3,162</td><td>3,162</td><td>103</td></tr>
+                <tr><td><code>.md</code></td><td>1</td><td>2,343</td><td>2,343</td><td>122</td></tr>
+                <tr><td><code>.txt</code></td><td>2</td><td>1,141</td><td>1,141</td><td>27</td></tr>
+                <tr><td><code>.metadata</code></td><td>1</td><td>998</td><td>998</td><td>31</td></tr>
+                <tr><td><code>download</code></td><td>1</td><td>314</td><td>314</td><td>9</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Website and wiki characters</h3>
+          <div class="grid">
+            <div class="mini"><strong><code>wiki.html</code></strong><span>32,223 characters and 450 lines in the documented page file.</span></div>
+            <div class="mini"><strong>Listed site files</strong><span>60,705 characters and 1,587 lines across HTML, CSS, docs, and content files.</span></div>
+            <div class="mini"><strong>Other site files</strong><span>28,482 characters and 1,137 lines without <code>wiki.html</code>.</span></div>
+            <div class="mini"><strong>Stats data</strong><span>Saved in <code>content/repo-stats.json</code> for reuse by tooling or future pages.</span></div>
           </div>
         </section>
 
