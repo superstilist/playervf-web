@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PlayerVF Downloads</title>
-  <meta name="description" content="Download PlayerVF for Windows and Android. Latest and new-gen beta builds from the official GitHub download file.">
+  <meta name="description" content="Download PlayerVF latest and new-gen beta builds for Windows and Android.">
   <meta name="theme-color" content="#08090c">
   <style>
     :root {
       color-scheme: dark;
       --bg: #08090c;
       --panel: #111319;
-      --panel-soft: #171a22;
+      --panel2: #171a22;
       --text: #f7f8fb;
       --muted: #9aa2b1;
-      --line: #252936;
+      --line: #272c38;
       --accent: #72f0bd;
       --radius: 8px;
       font-family: Arial, Helvetica, sans-serif;
@@ -22,10 +22,6 @@
 
     * {
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -41,7 +37,7 @@
     }
 
     .wrap {
-      width: min(980px, calc(100% - 32px));
+      width: min(900px, calc(100% - 32px));
       margin: 0 auto;
     }
 
@@ -50,7 +46,7 @@
     }
 
     .nav {
-      min-height: 68px;
+      min-height: 66px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -60,29 +56,27 @@
     .brand {
       font-size: 18px;
       font-weight: 800;
-      letter-spacing: .2px;
     }
 
-    .nav a {
+    .nav-link {
       color: var(--muted);
       font-size: 14px;
       font-weight: 700;
     }
 
-    .nav a:hover {
+    .nav-link:hover {
       color: var(--text);
     }
 
     main {
-      padding: 82px 0 64px;
+      padding: 76px 0 70px;
     }
 
     .hero {
-      max-width: 760px;
-      margin-bottom: 44px;
+      margin-bottom: 42px;
     }
 
-    .tag {
+    .label {
       display: inline-flex;
       align-items: center;
       min-height: 30px;
@@ -102,21 +96,22 @@
     }
 
     h1 {
-      margin: 18px 0 16px;
-      font-size: clamp(42px, 8vw, 76px);
+      max-width: 720px;
+      margin: 18px 0 14px;
+      font-size: clamp(42px, 8vw, 74px);
       line-height: .95;
       letter-spacing: -1px;
     }
 
     .lead {
-      max-width: 640px;
-      margin-bottom: 26px;
+      max-width: 620px;
+      margin-bottom: 24px;
       color: var(--muted);
       font-size: 18px;
-      line-height: 1.65;
+      line-height: 1.6;
     }
 
-    .hero-actions {
+    .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
@@ -133,8 +128,8 @@
       background: var(--text);
       color: var(--bg);
       font-weight: 800;
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
       white-space: nowrap;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
     }
 
     .button:hover {
@@ -148,12 +143,12 @@
     }
 
     .button.secondary:hover {
-      border-color: #3a4050;
-      background: var(--panel-soft);
+      background: var(--panel2);
+      border-color: #3b4150;
     }
 
     .section-title {
-      margin: 0 0 18px;
+      margin-bottom: 16px;
       color: var(--muted);
       font-size: 13px;
       font-weight: 800;
@@ -163,10 +158,10 @@
 
     .downloads {
       display: grid;
-      gap: 18px;
+      gap: 16px;
     }
 
-    .download-group {
+    .group {
       padding: 24px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -175,19 +170,17 @@
 
     .group-head {
       display: flex;
-      align-items: flex-start;
       justify-content: space-between;
       gap: 16px;
       margin-bottom: 18px;
     }
 
-    .group-head h2 {
+    .group h2 {
       margin-bottom: 6px;
       font-size: 28px;
-      letter-spacing: -.3px;
     }
 
-    .group-head p {
+    .group p {
       margin-bottom: 0;
       color: var(--muted);
       line-height: 1.55;
@@ -206,13 +199,13 @@
       white-space: nowrap;
     }
 
-    .download-list {
+    .files {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
     }
 
-    .download-card {
+    .file {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -223,25 +216,24 @@
       background: #0d0f14;
     }
 
-    .download-card h3 {
+    .file h3 {
       margin-bottom: 4px;
       font-size: 18px;
     }
 
-    .download-card p {
-      margin-bottom: 0;
+    .file p {
       color: var(--muted);
       font-size: 14px;
     }
 
-    .note {
-      margin: 20px 0 0;
+    .source {
+      margin-top: 18px;
       color: var(--muted);
       font-size: 14px;
       line-height: 1.6;
     }
 
-    .note a {
+    .source a {
       color: var(--text);
       text-decoration: underline;
       text-underline-offset: 3px;
@@ -268,30 +260,30 @@
 
     @media (max-width: 720px) {
       main {
-        padding-top: 58px;
+        padding-top: 56px;
       }
 
       .group-head {
         flex-direction: column;
       }
 
-      .download-list {
+      .files {
         grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 520px) {
-      .nav a {
+      .nav-link {
         display: none;
       }
 
-      .hero-actions,
+      .actions,
       .button,
-      .download-card {
+      .file {
         width: 100%;
       }
 
-      .download-card {
+      .file {
         align-items: stretch;
         flex-direction: column;
       }
@@ -302,41 +294,44 @@
   <header>
     <div class="wrap nav">
       <div class="brand">PlayerVF</div>
-      <a href="#downloads">Downloads</a>
+      <a class="nav-link" href="#downloads">Downloads</a>
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero">
-      <span class="tag">Official download file</span>
+      <span class="label">Download object</span>
       <h1>Download PlayerVF.</h1>
-      <p class="lead">Simple download page for PlayerVF. Choose the latest build, or try the new-gen beta build.</p>
-      <div class="hero-actions">
-        <a class="button" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.exe">Latest Windows</a>
-        <a class="button secondary" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.apk">Latest Android</a>
+      <p class="lead">Builds are shown from the download object: latest has Windows and Android, new-gen(betav3) has Android.</p>
+      <div class="actions">
+        <a class="button" href="#downloads">View downloads</a>
+        <a class="button secondary" href="https://github.com/superstilist/PlayerVf/blob/master/download">Source file</a>
       </div>
     </section>
 
     <section id="downloads">
       <p class="section-title">Downloads</p>
+
       <div class="downloads">
-        <article class="download-group">
+        <article class="group">
           <div class="group-head">
             <div>
               <h2>latest</h2>
-              <p>Latest stable download from the repository download file.</p>
+              <p>Latest build. Use this for the main stable download.</p>
             </div>
             <span class="badge">Latest</span>
           </div>
-          <div class="download-list">
-            <div class="download-card">
+
+          <div class="files">
+            <div class="file">
               <div>
                 <h3>Windows</h3>
                 <p>playervf.exe</p>
               </div>
               <a class="button" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.exe">Download</a>
             </div>
-            <div class="download-card">
+
+            <div class="file">
               <div>
                 <h3>Android</h3>
                 <p>playervf.apk</p>
@@ -346,23 +341,17 @@
           </div>
         </article>
 
-        <article class="download-group">
+        <article class="group">
           <div class="group-head">
             <div>
               <h2>new-gen(betav3)</h2>
-              <p>Beta download build from the repository download file.</p>
+              <p>Beta build. Android download only.</p>
             </div>
             <span class="badge">Beta</span>
           </div>
-          <div class="download-list">
-            <div class="download-card">
-              <div>
-                <h3>Windows</h3>
-                <p>playervf.exe</p>
-              </div>
-              <a class="button secondary" href="https://github.com/superstilist/PlayerVf/releases/download/betav3/playervf.exe">Download</a>
-            </div>
-            <div class="download-card">
+
+          <div class="files">
+            <div class="file">
               <div>
                 <h3>Android</h3>
                 <p>playervf.apk</p>
@@ -373,7 +362,8 @@
         </article>
       </div>
 
-      <p class="note">Names and links are based on the repository file:
+      <p class="source">
+        Source file:
         <a href="https://github.com/superstilist/PlayerVf/blob/master/download">github.com/superstilist/PlayerVf/blob/master/download</a>
       </p>
     </section>
