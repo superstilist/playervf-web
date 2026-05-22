@@ -3,275 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PlayerVF Wiki</title>
-  <meta name="description" content="PlayerVF wiki with features, app areas, platform support, and project notes.">
+  <title>PlayerVF Full Wiki</title>
+  <meta name="description" content="Full PlayerVF documentation generated from the feature document and lib source tree.">
   <meta name="theme-color" content="#07080d">
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #07080d;
-      --panel: rgba(255, 255, 255, .055);
-      --panel-strong: rgba(255, 255, 255, .09);
-      --text: #f7f8fb;
-      --muted: #a2aabc;
-      --line: rgba(255, 255, 255, .12);
-      --accent: #74f0bd;
-      --accent-2: #91b8ff;
-      --shadow: 0 28px 80px rgba(0, 0, 0, .3);
-      --radius: 8px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at 50% -18%, rgba(116, 240, 189, .16), transparent 34rem),
-        radial-gradient(circle at 90% 20%, rgba(145, 184, 255, .12), transparent 28rem),
-        var(--bg);
-      color: var(--text);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .wrap {
-      width: min(1040px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid var(--line);
-      background: rgba(7, 8, 13, .78);
-      backdrop-filter: blur(18px);
-    }
-
-    .nav {
-      min-height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .brand {
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    .links {
-      display: flex;
-      gap: 18px;
-    }
-
-    .links a {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 800;
-      transition: color .2s ease;
-    }
-
-    .links a:hover {
-      color: var(--text);
-    }
-
-    main {
-      padding: 74px 0 72px;
-    }
-
-    .hero {
-      max-width: 820px;
-      margin-bottom: 32px;
-    }
-
-    .label {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 0 11px;
-      border: 1px solid rgba(116, 240, 189, .28);
-      border-radius: 999px;
-      background: rgba(116, 240, 189, .08);
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
-    }
-
-    h1 {
-      margin: 18px 0 16px;
-      font-size: clamp(42px, 8vw, 76px);
-      line-height: .96;
-      letter-spacing: -1px;
-    }
-
-    .lead {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.65;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .toc,
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: linear-gradient(180deg, var(--panel-strong), var(--panel));
-      box-shadow: var(--shadow);
-    }
-
-    .toc {
-      position: sticky;
-      top: 92px;
-      padding: 18px;
-    }
-
-    .toc strong {
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .toc a {
-      display: block;
-      padding: 9px 0;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
-      border-top: 1px solid rgba(255, 255, 255, .07);
-    }
-
-    .toc a:hover {
-      color: var(--text);
-    }
-
-    .content {
-      display: grid;
-      gap: 18px;
-    }
-
-    .card {
-      padding: clamp(22px, 4vw, 32px);
-    }
-
-    .card h2 {
-      margin-bottom: 12px;
-      font-size: clamp(26px, 4vw, 38px);
-    }
-
-    .card h3 {
-      margin: 22px 0 10px;
-      color: var(--accent);
-      font-size: 18px;
-    }
-
-    .card p {
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .mini {
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(0, 0, 0, .2);
-    }
-
-    .mini strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .mini span,
-    li {
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    ul,
-    ol {
-      margin: 10px 0 0;
-      padding-left: 20px;
-    }
-
-    code {
-      color: var(--accent-2);
-    }
-
-    footer {
-      padding: 28px 0 38px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .footer-row a {
-      color: var(--text);
-    }
-
-    @media (max-width: 900px) {
-      .layout,
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .toc {
-        position: static;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .wrap {
-        width: min(100% - 28px, 1040px);
-      }
-
-      .links {
-        gap: 12px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/wiki.css">
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
+  <header class="site-header">
+    <div class="wide-wrap nav">
       <a class="brand" href="index.html">PlayerVF</a>
       <nav class="links" aria-label="Main navigation">
         <a href="index.html">Downloads</a>
@@ -280,132 +20,367 @@
     </div>
   </header>
 
-  <main class="wrap">
+  <main class="wide-wrap">
     <section class="hero">
-      <span class="label">Wiki</span>
-      <h1>PlayerVF feature wiki.</h1>
-      <p class="lead">A readable guide based on the full features and functions document. It explains what PlayerVF does, how the main parts fit together, and what users can expect from the app.</p>
+      <span class="label">Full source wiki</span>
+      <h1>PlayerVF developer documentation.</h1>
+      <p class="lead">This page expands the wiki using the full feature document plus the real source structure in <code>lib</code>. It documents the app areas, files, classes, responsibilities, and the main functions used by each part.</p>
+      <div class="doc-stats" aria-label="Documentation summary">
+        <div class="doc-stat">
+          <strong>11</strong>
+          <span>Main wiki sections</span>
+        </div>
+        <div class="doc-stat">
+          <strong>94</strong>
+          <span>Function index entries</span>
+        </div>
+        <div class="doc-stat">
+          <strong>lib</strong>
+          <span>Source tree documented</span>
+        </div>
+        <div class="doc-stat">
+          <strong>Python</strong>
+          <span>Backend overview included</span>
+        </div>
+      </div>
     </section>
 
     <div class="layout">
       <aside class="toc" aria-label="Wiki sections">
-        <strong>Sections</strong>
+        <strong>Documentation</strong>
         <a href="#overview">Overview</a>
-        <a href="#features">User features</a>
-        <a href="#playback">Playback</a>
-        <a href="#youtube">YouTube Music</a>
-        <a href="#sharing">Sharing</a>
-        <a href="#customization">Customization</a>
-        <a href="#technical">Technical map</a>
-        <a href="#flows">How it works</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#models">Models</a>
+        <a href="#main">Main app</a>
+        <a href="#pages">Pages</a>
+        <a href="#services">Services</a>
+        <a href="#widgets">Widgets</a>
+        <a href="#python">Python backend</a>
+        <a href="#flows">Data flows</a>
+        <a href="#function-index">Function index</a>
+        <a href="#future">Notes</a>
       </aside>
 
       <div class="content">
         <section id="overview" class="card">
           <h2>Overview</h2>
-          <p>PlayerVF is a cross-platform Flutter music and video player. It focuses on local media playback, playlists, favorites, lyrics, audio effects, YouTube Music tools, local sharing, metadata editing, cover art, and deep appearance customization.</p>
+          <p>PlayerVF is a Flutter music and video player. It supports local music scanning, audio playback, video playback, playlists, favorites, lyrics, audio effects, YouTube Music search/stream/download, local network sharing, Wi-Fi Direct sharing, metadata editing, cover art extraction, and deep appearance customization.</p>
           <div class="grid">
-            <div class="mini"><strong>Platforms</strong><span>Android, Windows, and web are configured in the project.</span></div>
-            <div class="mini"><strong>Main purpose</strong><span>Play, organize, customize, download, and share music or video from one app.</span></div>
+            <div class="mini"><strong>Configured platforms</strong><span>Android, Windows, and web are present in the repository structure.</span></div>
+            <div class="mini"><strong>State style</strong><span>Provider and ChangeNotifier are used for app settings, player state, library updates, and page changes.</span></div>
+            <div class="mini"><strong>Playback stack</strong><span>Media playback uses media_kit, media_kit_video, just_audio/audio_service integration, and Windows SMTC support.</span></div>
+            <div class="mini"><strong>Helpers</strong><span>Python code supports YouTube Music, downloads, thumbnails, subtitles, tagging, and media metadata work.</span></div>
           </div>
         </section>
 
-        <section id="features" class="card">
-          <h2>User features</h2>
+        <section id="architecture" class="card">
+          <h2>Architecture</h2>
+          <p>The app is centered around <code>MusicService</code>. UI pages ask this service to scan, play, queue, shuffle, repeat, load lyrics, download from YouTube, update metadata, manage playlists, and persist state. <code>SettingsModel</code> owns persistent user preferences for appearance, paths, video behavior, decoders, and performance.</p>
+          <h3>Directory map</h3>
+          <ul>
+            <li><code>lib/main.dart</code>: app entrypoint, theme building, app shell, navigation, keyboard shortcuts, mini player, and player overlay.</li>
+            <li><code>lib/models</code>: serializable state objects such as music, playlists, settings, lyrics, covers, and selected page state.</li>
+            <li><code>lib/pages</code>: full screens for library, favorites, playlists, player, video, YouTube Music, sharing, settings, and appearance.</li>
+            <li><code>lib/services</code>: playback, scanning, metadata parsing, sharing, YouTube, MusicBrainz, responsiveness, performance policy, and OS media controls.</li>
+            <li><code>lib/widgets</code>: reusable UI pieces such as cards, player controls, cover art, audio effects, particles, glass containers, and video surfaces.</li>
+            <li><code>lib/python</code>: desktop Python backend for YouTube search, stream resolution, download, subtitles, thumbnails, and metadata files.</li>
+          </ul>
+        </section>
+
+        <section id="models" class="card">
+          <h2>Models</h2>
           <div class="grid">
-            <div class="mini"><strong>Local library</strong><span>Scan folders, import music, remember library data, read metadata, and keep favorites and play stats.</span></div>
-            <div class="mini"><strong>Playlists</strong><span>Create playlists, rename them, delete them, add songs, remove songs, and use system playlists like favorites or recent plays.</span></div>
-            <div class="mini"><strong>Lyrics</strong><span>Open plain or timed lyrics, search online, save selected lyrics, edit lyrics, and view them fullscreen.</span></div>
-            <div class="mini"><strong>Metadata</strong><span>Edit track info, pick cover art, and use MusicBrainz lookup to improve tags.</span></div>
+            <div class="mini"><strong><code>Cover</code></strong><span>Small data object for extracted cover bytes/path and cover metadata.</span></div>
+            <div class="mini"><strong><code>LyricLine</code>, <code>LyricsDocument</code></strong><span>Represent timed and plain lyrics. <code>activeIndexAt</code> chooses the lyric line for the current playback position.</span></div>
+            <div class="mini"><strong><code>Music</code></strong><span>Core track/media object: id, title, artist, album, path, cover, genre, duration, favorite status, play count, last played, and date added.</span></div>
+            <div class="mini"><strong><code>Playlist</code></strong><span>User/system playlist model with id, name, music IDs, createdAt, updatedAt, JSON import/export, and copy support.</span></div>
+            <div class="mini"><strong><code>PageState</code></strong><span>Small ChangeNotifier that stores selected high-level page: home, favorite, or playlist.</span></div>
+            <div class="mini"><strong><code>SettingsModel</code></strong><span>Persistent settings model for paths, theme mode, theme preset, particles, font, layout, view mode, decoder mode, video behavior, share backups, and performance.</span></div>
+          </div>
+          <h3>Settings enums</h3>
+          <ul>
+            <li><code>ViewMode</code>: card or list.</li>
+            <li><code>NavPosition</code>: top, bottom, left, right.</li>
+            <li><code>ThemePreset</code>: material, graphite, classic, fox, anime, azure, cosmic, sunset, midnight.</li>
+            <li><code>ParticleEffect</code>: none, sakura, snow, stars, bubbles, rain.</li>
+            <li><code>DecoderMode</code>: auto, software, hardware.</li>
+            <li><code>PerformanceMode</code>: auto, quality, balanced, batterySaver, maxPerformance.</li>
+          </ul>
+        </section>
+
+        <section id="main" class="card">
+          <h2>Main app</h2>
+          <h3><code>main.dart</code></h3>
+          <p>The entrypoint initializes media playback, configures desktop behavior, installs a Windows keyboard assertion guard, and runs <code>MyApp</code>. The app creates <code>SettingsModel</code> and <code>MusicService</code> providers and builds a Material theme from settings.</p>
+          <div class="grid">
+            <div class="mini"><strong><code>main()</code></strong><span>Starts Flutter, initializes playback libraries, applies desktop setup, and launches the app.</span></div>
+            <div class="mini"><strong><code>MyApp</code></strong><span>Provides settings and music services, then builds themed app navigation.</span></div>
+            <div class="mini"><strong><code>_buildAppTheme</code></strong><span>Creates the app theme from preset, brightness, accent color, and glass intensity.</span></div>
+            <div class="mini"><strong><code>MainNavigationScreen</code></strong><span>Main shell for tabs, mini player, search, shortcuts, navigation dock, and full player overlay.</span></div>
+          </div>
+          <h3>Main navigation responsibilities</h3>
+          <ul>
+            <li>Selects between Home, Favorites, Playlists, YouTube Music, and Share pages.</li>
+            <li>Handles play/pause, next, previous/restart, seek, volume, mute, and fullscreen shortcuts.</li>
+            <li>Builds top app bar, navigation dock, search bar, content area, and mini player.</li>
+            <li>Uses <code>_MiniPlayPauseButton</code> for responsive optimistic play/pause UI.</li>
+          </ul>
+        </section>
+
+        <section id="pages" class="card">
+          <h2>Pages</h2>
+          <h3><code>HomeScreen</code></h3>
+          <p>Home/library smart playlist page. It builds responsive playlist and library layouts, square playlist cards, playlist collage artwork, add-playlist flow, empty state, and automatic grid counts.</p>
+          <h3><code>FavoritePage</code></h3>
+          <p>Displays favorite tracks with adaptive grid/list behavior and opens tracks through the music service.</p>
+          <h3><code>PlaylistPage</code></h3>
+          <p>Shows all playlists, an empty state, adaptive grid count, and playlist creation dialog.</p>
+          <h3><code>PlaylistDetailPage</code></h3>
+          <p>Displays songs inside one playlist, opens player from details, builds playlist collage artwork, calculates grid count, and supports playlist rename/edit dialog.</p>
+          <h3><code>PlayerPage</code></h3>
+          <p>Full audio player with cover-based background, hero artwork, metadata, playback controls, queue preview, more options, add-to-playlist dialog, track detail view, queue sheet, lyrics sheet, fullscreen lyrics, online lyrics search, custom lyrics search, and lyrics editing.</p>
+          <h3><code>VideoPage</code></h3>
+          <p>Full video player with local and YouTube video support, palette background, quality switching, subtitle tools, fullscreen video page, keyboard intents, fullscreen controls, local manifest loading, YouTube detail loading, and quick queue.</p>
+          <h3><code>YoutubeMusicPage</code></h3>
+          <p>Searches YouTube Music, runs bridge smoke test, downloads audio/video/subtitles, chooses download options, detects already downloaded audio/video/subtitle marks, streams results, and renders search panel/result tiles.</p>
+          <h3><code>SharePage</code></h3>
+          <p>Starts/stops local sharing, discovers devices, connects to remote devices, syncs selected tracks, pauses/resumes/cancels transfer, renders host card, connect card, device rows, track rows, transfer flow, and status messages.</p>
+          <h3><code>SettingsScreen</code></h3>
+          <p>Controls scanning, source paths, YouTube download path, cache clear, song gap, video settings, subtitle picking, decoder mode, performance mode, background blur, and folder import messaging.</p>
+          <h3><code>AppearanceScreen</code></h3>
+          <p>Controls theme preset, light/dark/system theme, particles, custom accent color, RGB sliders, nav position, font size, border radius, glass effect, view mode, card size, margins, and release sliders.</p>
+        </section>
+
+        <section id="services" class="card">
+          <h2>Services</h2>
+          <h3><code>MusicService</code></h3>
+          <p>The central service owns library state, selected track, playback state, player backend, volume, queue IDs, shuffle/repeat, playlists, lyrics, audio effects, subtitles, video state, streaming state, snapshots, and saved playback state.</p>
+          <h4>Main groups inside <code>MusicService</code></h4>
+          <ul>
+            <li>Initialization: video controller, player binding, async settings/library load, backend callbacks.</li>
+            <li>Playback: play/pause/toggle, next, previous, seek, queue playback, restart, repeat, shuffle, completion behavior.</li>
+            <li>Media backend: opening local files, URLs, streams, downloaded videos, YouTube streams, and applying decoder settings.</li>
+            <li>Audio effects: enable/disable, equalizer, presets, pitch, speed, reverb, per-song/global mode, native Windows filters, MPV fallback filters.</li>
+            <li>Lyrics: sidecar lookup, manual lyrics paths, online LRCLIB search, custom queries, save/edit lyrics, active lyrics ownership.</li>
+            <li>Library: scan/import, merge remembered state, cover extraction, downloaded video quality collapse, favorites/stats/playlists persistence.</li>
+            <li>Subtitles: sidecar candidates, URL subtitles, local subtitle files, disable subtitles, and apply sidecar subtitle when present.</li>
+          </ul>
+          <h3>Other services</h3>
+          <div class="grid">
+            <div class="mini"><strong><code>MusicScannerService</code></strong><span>Scans paths, reads Android media hints, detects audio/video files, parses metadata, extracts cover art, and creates <code>Music</code> objects.</span></div>
+            <div class="mini"><strong><code>ID3Parser</code></strong><span>Parses MP3 ID3v2/v1, APE, MP4/M4A, FLAC, cover art, duration, and filename fallback metadata.</span></div>
+            <div class="mini"><strong><code>CoverExtractor</code></strong><span>Extracts cover art from local files or assets next to bundled music.</span></div>
+            <div class="mini"><strong><code>CoverColorService</code></strong><span>Creates cover palettes for player/video backgrounds and fallback colors.</span></div>
+            <div class="mini"><strong><code>YoutubeMusicService</code></strong><span>Search, download, stream, warm stream cache, resolve download directory, run Python/native helper, and convert errors into friendly messages.</span></div>
+            <div class="mini"><strong><code>LocalShareService</code></strong><span>Local HTTP share server, discovery, manifest fetch, file transfer, pause/resume/cancel, duplicate checking, and safe filenames.</span></div>
+            <div class="mini"><strong><code>WifiDirectService</code></strong><span>Android Wi-Fi Direct permissions, discovery, connect, disconnect, stop discovery, and trust device IDs.</span></div>
+            <div class="mini"><strong><code>MusicBrainzTagService</code></strong><span>Searches MusicBrainz, scores tag matches, normalizes tokens, and returns selected recording metadata.</span></div>
+            <div class="mini"><strong><code>PlayerAudioHandler</code></strong><span>Background/OS media controls, media buttons, timeline, metadata, Windows SMTC guard, and external playback state.</span></div>
+            <div class="mini"><strong><code>PerformancePolicy</code></strong><span>Decides animation duration, particles, blur, cache scale, and visual cost by performance mode.</span></div>
+            <div class="mini"><strong><code>Responsive</code></strong><span>Viewport scale helpers and extensions like <code>10.w</code>, <code>10.h</code>, and <code>14.sp</code>.</span></div>
+            <div class="mini"><strong><code>web_folder_picker</code></strong><span>Web folder import implementation and stubs for non-web platforms.</span></div>
           </div>
         </section>
 
-        <section id="playback" class="card">
-          <h2>Playback</h2>
-          <p>The app supports normal music controls, queues, shuffle, repeat, saved playback position, smooth transitions, volume control, and keyboard shortcuts. Video playback includes local video, YouTube video streams, quality switching, fullscreen mode, auto-hidden controls, and subtitle support.</p>
-          <h3>Audio effects</h3>
-          <ul>
-            <li>Equalizer with presets and band controls.</li>
-            <li>Pitch, speed, and reverb controls.</li>
-            <li>Global or per-song effect settings.</li>
-            <li>Reset options for equalizer and all audio effects.</li>
-          </ul>
-        </section>
-
-        <section id="youtube" class="card">
-          <h2>YouTube Music</h2>
-          <p>PlayerVF can search YouTube Music, filter results, stream without downloading, download audio, download video, choose quality, download subtitles, cache stream URLs, and mark already downloaded items.</p>
-          <p>Desktop uses a Python helper, while Android uses native bridge/helper code for search, streaming, downloads, covers, and metadata.</p>
-        </section>
-
-        <section id="sharing" class="card">
-          <h2>Sharing</h2>
-          <p>The app can start a local share server, share the current song or a full library, discover nearby share servers, fetch remote manifests, download remote tracks, pause or resume transfers, and avoid duplicate files.</p>
-          <p>Android also includes Wi-Fi Direct discovery, connection, disconnect, permissions, and trusted device support.</p>
-        </section>
-
-        <section id="customization" class="card">
-          <h2>Customization</h2>
-          <p>PlayerVF has theme modes, theme presets, accent color controls, RGB sliders, glass intensity, border radius, font size, card size, view mode, navigation position, particle effects, decoder choices, and performance modes.</p>
+        <section id="widgets" class="card">
+          <h2>Widgets</h2>
           <div class="grid">
-            <div class="mini"><strong>Themes</strong><span>Material, Graphite, Classic, Fox, Anime, Azure, Cosmic, Sunset, and Midnight.</span></div>
-            <div class="mini"><strong>Effects</strong><span>Sakura, snow, stars, bubbles, rain, or no particles.</span></div>
+            <div class="mini"><strong><code>MusicCard</code></strong><span>Track card/list row, context menu, track info, edit metadata, MusicBrainz tagging, cover picking, and add-to-playlist dialog.</span></div>
+            <div class="mini"><strong><code>PlaylistCard</code></strong><span>Large playlist card with cover collage, context menu, and menu items.</span></div>
+            <div class="mini"><strong><code>SmallPlaylistCard</code></strong><span>Compact playlist tile with deterministic color by playlist id.</span></div>
+            <div class="mini"><strong><code>PlaybackProgressControl</code></strong><span>Stable progress slider with bounded position and progress-to-duration conversion.</span></div>
+            <div class="mini"><strong><code>AudioEffectsMenu</code></strong><span>Bottom sheet for speed, pitch, reverb, EQ presets, EQ bands, song/global scope, tone buttons, and reset actions.</span></div>
+            <div class="mini"><strong><code>CoverArtTexture</code></strong><span>Shows local, network, blob, or fallback cover art; tries multiple network candidates.</span></div>
+            <div class="mini"><strong><code>GlassContainer</code></strong><span>Reusable clipped blur/translucent panel with surface color calculation.</span></div>
+            <div class="mini"><strong><code>ParticleSystem</code></strong><span>Animated sakura, snow, stars, bubbles, or rain particles with performance scaling.</span></div>
+            <div class="mini"><strong><code>StableVideoSurface</code></strong><span>Keeps video texture stable and schedules Windows texture resize.</span></div>
+            <div class="mini"><strong><code>SettingsDrawer</code></strong><span>Compact settings drawer for paths, YouTube download location, web folder messages, and import results.</span></div>
+            <div class="mini"><strong><code>FadeInUpAnimation</code></strong><span>Simple entrance animation wrapper.</span></div>
+            <div class="mini"><strong><code>ShowUpControl</code></strong><span>Visibility toggle wrapper for show/hide controls.</span></div>
           </div>
         </section>
 
-        <section id="technical" class="card">
-          <h2>Technical map</h2>
-          <h3>Main app</h3>
-          <p><code>lib/main.dart</code> starts the app, configures providers, applies theming, handles navigation, search, shortcuts, mini player, and player overlay behavior.</p>
-          <h3>Core models</h3>
-          <ul>
-            <li><code>Music</code>: track data, metadata, favorite state, stats, and paths.</li>
-            <li><code>Playlist</code>: playlist name, song IDs, creation, and update times.</li>
-            <li><code>SettingsModel</code>: theme, paths, layout, decoder, performance, video, and sharing settings.</li>
-            <li><code>LyricsDocument</code>: parsed timed or plain lyrics.</li>
-          </ul>
-          <h3>Core services</h3>
-          <ul>
-            <li><code>MusicService</code>: central playback, library, queue, lyrics, playlists, effects, video, and saved state.</li>
-            <li><code>MusicScannerService</code>: scans local media and creates music objects.</li>
-            <li><code>ID3Parser</code>: reads MP3, MP4, FLAC, APE, and fallback filename metadata.</li>
-            <li><code>YoutubeMusicService</code>: bridges the app to Python or Android helpers.</li>
-            <li><code>LocalShareService</code>: local network sharing and transfer handling.</li>
-          </ul>
+        <section id="python" class="card">
+          <h2>Python backend</h2>
+          <p><code>lib/python/api.py</code> supports desktop YouTube Music search, audio/video downloads, subtitles, thumbnails, metadata, safe filenames, duplicate-safe output paths, and stream resolution.</p>
+          <div class="grid">
+            <div class="mini"><strong><code>SearchItem</code></strong><span>Normalized search result data passed between Python and Flutter.</span></div>
+            <div class="mini"><strong><code>MediaDownloader</code></strong><span>Handles detailed media download behavior, output naming, metadata, covers, and final library file selection.</span></div>
+            <div class="mini"><strong>Search</strong><span><code>search_youtube_music</code> returns normalized JSON search results.</span></div>
+            <div class="mini"><strong>Download</strong><span><code>download_youtube_music</code> downloads audio/video/subtitles and returns downloaded file paths.</span></div>
+            <div class="mini"><strong>Stream</strong><span><code>stream_youtube_music</code> resolves stream URLs, qualities, and subtitle data.</span></div>
+            <div class="mini"><strong>Utilities</strong><span>Safe filenames, MIME detection, thumbnail selection, high-quality thumbnail URLs, duration parsing, and progress events.</span></div>
+          </div>
         </section>
 
         <section id="flows" class="card">
-          <h2>How it works</h2>
+          <h2>Data flows</h2>
           <h3>Local scan flow</h3>
           <ol>
-            <li>User adds a music folder.</li>
-            <li>The scanner finds audio and video files.</li>
-            <li>Metadata and covers are read.</li>
-            <li>Favorites, stats, and library snapshots are preserved.</li>
-            <li>The UI updates with the refreshed library.</li>
+            <li>User adds or updates a music path in settings.</li>
+            <li><code>SettingsModel</code> saves the path.</li>
+            <li><code>MusicService</code> asks <code>MusicScannerService</code> to scan.</li>
+            <li><code>ID3Parser</code> and <code>CoverExtractor</code> parse metadata and artwork.</li>
+            <li>Old favorites, stats, and playlist identity are merged back.</li>
+            <li>Library snapshot is saved and the UI updates.</li>
           </ol>
           <h3>Playback flow</h3>
           <ol>
-            <li>User taps a track.</li>
-            <li>The service prepares the player and opens the media.</li>
-            <li>Effects and decoder settings are applied.</li>
-            <li>Playback starts and OS media controls update.</li>
+            <li>User taps a track or queue item.</li>
+            <li><code>MusicService</code> selects the track and prepares the player backend.</li>
+            <li>Audio effects and decoder settings are applied.</li>
+            <li>Playback starts and <code>PlayerAudioHandler</code> updates OS controls.</li>
+          </ol>
+          <h3>YouTube download flow</h3>
+          <ol>
+            <li>User searches from <code>YoutubeMusicPage</code>.</li>
+            <li><code>YoutubeMusicService</code> calls Python or Android helper code.</li>
+            <li>User selects audio/video/subtitle options.</li>
+            <li>Backend downloads files and returns paths.</li>
+            <li>Library refresh/import makes the files available in PlayerVF.</li>
           </ol>
           <h3>Sharing flow</h3>
           <ol>
-            <li>One device starts sharing.</li>
-            <li>Another device discovers it.</li>
-            <li>The receiver fetches a manifest and chooses tracks.</li>
-            <li>Files transfer with progress and duplicate checks.</li>
+            <li>Host starts a share server.</li>
+            <li>Receiver discovers or connects to the share server.</li>
+            <li>Receiver fetches a manifest and selects tracks.</li>
+            <li><code>LocalShareService</code> downloads files with progress and duplicate checks.</li>
           </ol>
+        </section>
+
+        <section id="function-index" class="card">
+          <h2>Function index</h2>
+          <p>This index is grouped from the real source files under <code>lib</code>. It focuses on named classes and main methods instead of generated/cache files.</p>
+          <h3>Models</h3>
+          <ul class="function-list">
+            <li><code>Cover</code></li>
+            <li><code>LyricLine</code></li>
+            <li><code>LyricsDocument.activeIndexAt</code></li>
+            <li><code>Music.toJson</code></li>
+            <li><code>Music.fromJson</code></li>
+            <li><code>Playlist.toJson</code></li>
+            <li><code>Playlist.fromJson</code></li>
+            <li><code>PageState.setPage</code></li>
+            <li><code>SettingsModel.loadSettings</code></li>
+            <li><code>SettingsModel.setThemePreset</code></li>
+            <li><code>SettingsModel.setParticleEffect</code></li>
+            <li><code>SettingsModel.setNavPosition</code></li>
+            <li><code>SettingsModel.setFontSize</code></li>
+            <li><code>SettingsModel.setBorderRadius</code></li>
+            <li><code>SettingsModel.setGlassEffect</code></li>
+            <li><code>SettingsModel.setAccentColor</code></li>
+            <li><code>SettingsModel.setViewMode</code></li>
+            <li><code>SettingsModel.setThemeMode</code></li>
+            <li><code>SettingsModel.addMusicPath</code></li>
+            <li><code>SettingsModel.removeMusicPath</code></li>
+            <li><code>SettingsModel.clearAllPaths</code></li>
+          </ul>
+
+          <h3>Pages</h3>
+          <ul class="function-list">
+            <li><code>HomeScreen.build</code></li>
+            <li><code>HomeScreen._buildResponsiveLayout</code></li>
+            <li><code>HomeScreen._showCreatePlaylistDialog</code></li>
+            <li><code>FavoritePage.build</code></li>
+            <li><code>PlaylistPage._showCreatePlaylistDialog</code></li>
+            <li><code>PlaylistDetailPage._showEditPlaylistDialog</code></li>
+            <li><code>PlayerPage._buildControlsSection</code></li>
+            <li><code>PlayerPage._showQueueSheet</code></li>
+            <li><code>PlayerPage._showLyricsSheet</code></li>
+            <li><code>PlayerPage._searchLyrics</code></li>
+            <li><code>PlayerPage._editLyrics</code></li>
+            <li><code>VideoPage._loadLocalVideoManifest</code></li>
+            <li><code>VideoPage._loadYoutubeDetails</code></li>
+            <li><code>VideoPage._changeYoutubeQuality</code></li>
+            <li><code>VideoPage._showQualitySheet</code></li>
+            <li><code>VideoPage._showSubtitleSheet</code></li>
+            <li><code>YoutubeMusicPage._search</code></li>
+            <li><code>YoutubeMusicPage._download</code></li>
+            <li><code>YoutubeMusicPage._stream</code></li>
+            <li><code>YoutubeMusicPage._chooseDownloadOptions</code></li>
+            <li><code>SharePage._startSharing</code></li>
+            <li><code>SharePage._autoFindDevices</code></li>
+            <li><code>SharePage._syncTracks</code></li>
+            <li><code>SettingsScreen._addPath</code></li>
+            <li><code>SettingsScreen._pickSubtitleFile</code></li>
+            <li><code>AppearanceScreen._buildPresetButton</code></li>
+            <li><code>AppearanceScreen._buildAccentColorPicker</code></li>
+          </ul>
+
+          <h3>Services</h3>
+          <ul class="function-list">
+            <li><code>MusicService._initializeAsync</code></li>
+            <li><code>MusicService._initPlayer</code></li>
+            <li><code>MusicService.setEffectsEnabled</code></li>
+            <li><code>MusicService.setEqualizerPreset</code></li>
+            <li><code>MusicService._applyAudioEffects</code></li>
+            <li><code>MusicService.setDecoderModes</code></li>
+            <li><code>MusicService.loadSubtitleFile</code></li>
+            <li><code>MusicService.loadLyricsForCurrent</code></li>
+            <li><code>MusicService.searchLyricsForCurrentOnline</code></li>
+            <li><code>MusicService.saveLyricsResultForCurrent</code></li>
+            <li><code>MusicService._tryFetchLyricsOnline</code></li>
+            <li><code>MusicService._handleTrackCompleted</code></li>
+            <li><code>MusicService._restorePlaybackStateIfNeeded</code></li>
+            <li><code>MusicScannerService.processPath</code></li>
+            <li><code>ID3Parser._parseMp3Tags</code></li>
+            <li><code>ID3Parser._parseMp4Tags</code></li>
+            <li><code>ID3Parser._parseFlacBlocks</code></li>
+            <li><code>ID3Parser.parseDurationFromFile</code></li>
+            <li><code>CoverExtractor.extractCover</code></li>
+            <li><code>YoutubeMusicService.download</code></li>
+            <li><code>YoutubeMusicService.stream</code></li>
+            <li><code>YoutubeMusicService.warmStreams</code></li>
+            <li><code>LocalShareService.startSharing</code></li>
+            <li><code>LocalShareService.fetchManifest</code></li>
+            <li><code>LocalShareService.pauseTransfer</code></li>
+            <li><code>WifiDirectService.ensurePermissions</code></li>
+            <li><code>MusicBrainzTagService.findBestTagForMusic</code></li>
+            <li><code>PlayerAudioHandler.updateNowPlaying</code></li>
+            <li><code>PlayerAudioHandler.skipToNext</code></li>
+            <li><code>PerformancePolicy.animation</code></li>
+          </ul>
+
+          <h3>Widgets and Python</h3>
+          <ul class="function-list">
+            <li><code>MusicCard._showTrackInfoDialog</code></li>
+            <li><code>MusicCard._showEditMetadataDialog</code></li>
+            <li><code>MusicCard._autoTagWithMusicBrainz</code></li>
+            <li><code>MusicCard._pickCoverArt</code></li>
+            <li><code>AudioEffectsMenu.showAudioEffectsMenu</code></li>
+            <li><code>PlaybackProgressControl._progressFor</code></li>
+            <li><code>CoverArtTexture._buildDefaultCover</code></li>
+            <li><code>ParticleSystem._initParticles</code></li>
+            <li><code>StableVideoSurface._scheduleWindowsTextureResize</code></li>
+            <li><code>api.safe_filename</code></li>
+            <li><code>api.search_youtube_music</code></li>
+            <li><code>api.download_youtube_music</code></li>
+            <li><code>api.stream_youtube_music</code></li>
+            <li><code>api._collect_video_qualities</code></li>
+            <li><code>api._collect_subtitles</code></li>
+            <li><code>api._main</code></li>
+          </ul>
+          <div class="file-note">Note: the source contains many more private helper functions in the large player/video/service files. This wiki documents the full source areas and the main callable responsibilities, while avoiding raw code dumps.</div>
+        </section>
+
+        <section id="future" class="card">
+          <h2>Notes for future development</h2>
+          <ul>
+            <li><code>MusicService</code> is very large and could eventually split into playback, library, lyrics, queue, effects, and persistence services.</li>
+            <li>Python desktop and Android helper behavior should stay aligned when changing YouTube search, stream, or download features.</li>
+            <li>Downloaded video manifests and subtitle metadata should be treated as stable formats once users have files on disk.</li>
+            <li>Settings are stored with SharedPreferences keys; renaming keys without migration can lose user preferences.</li>
+            <li>Library identity depends on IDs and file paths, so changing ID logic can affect favorites, playlists, stats, and resume data.</li>
+            <li>Audio effect behavior differs by backend and platform; Windows native filters and generic media_kit paths both need testing after changes.</li>
+          </ul>
         </section>
       </div>
     </div>
   </main>
 
   <footer>
-    <div class="wrap footer-row">
-      <span>PlayerVF Wiki</span>
+    <div class="wide-wrap footer-row">
+      <span>PlayerVF Full Wiki</span>
       <a href="index.html">Back to downloads</a>
     </div>
   </footer>
