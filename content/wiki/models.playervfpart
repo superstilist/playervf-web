@@ -1,0 +1,14 @@
+::section models "Models"
+Cover => extracted cover bytes/path and cover metadata.
+LyricLine / LyricsDocument => timed and plain lyrics; activeIndexAt chooses the line for the current playback position.
+Music => track/media object with id, title, artist, album, path, cover, genre, duration, favorite status, play count, last played, and date added.
+Playlist => playlist model with id, name, music IDs, timestamps, JSON import/export, and copy support.
+PageState => selected high-level page state.
+SettingsModel => paths, theme mode, theme preset, particles, font, layout, view mode, decoder mode, video behavior, share backups, and performance.
+
+ViewMode => card or list.
+NavPosition => top, bottom, left, right.
+ThemePreset => material, graphite, classic, fox, anime, azure, cosmic, sunset, midnight.
+ParticleEffect => none, sakura, snow, stars, bubbles, rain.
+DecoderMode => auto, software, hardware.
+PerformanceMode => auto, quality, balanced, batterySaver, maxPerformance.

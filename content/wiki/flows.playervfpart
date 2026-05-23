@@ -1,0 +1,5 @@
+::section flows "Data flows"
+Local scan => settings path, scanner, ID3Parser/CoverExtractor, merge remembered state, save snapshot, update UI.
+Playback => user selects track, MusicService prepares backend, applies effects/decoders, starts playback, updates PlayerAudioHandler.
+YouTube download => search page, YoutubeMusicService, helper backend, selected options, downloaded paths, library refresh/import.
+Sharing => host server, receiver discovery, manifest fetch, selected tracks, transfer with progress and duplicate checks.

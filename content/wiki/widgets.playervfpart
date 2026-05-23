@@ -1,0 +1,13 @@
+::section widgets "Widgets"
+MusicCard => track card/list row, context menu, details, metadata edit, MusicBrainz tagging, cover picking, and add-to-playlist.
+PlaylistCard => large playlist card with cover collage and context menu.
+SmallPlaylistCard => compact playlist tile with deterministic color.
+PlaybackProgressControl => stable progress slider and position conversion.
+AudioEffectsMenu => speed, pitch, reverb, EQ presets, bands, scope, tone buttons, and reset actions.
+CoverArtTexture => local, network, blob, or fallback cover rendering.
+GlassContainer => clipped blur/translucent panel.
+ParticleSystem => sakura, snow, stars, bubbles, and rain particles.
+StableVideoSurface => stable video texture and Windows resize scheduling.
+SettingsDrawer => compact paths and YouTube download settings.
+FadeInUpAnimation => entrance animation wrapper.
+ShowUpControl => visibility toggle wrapper.

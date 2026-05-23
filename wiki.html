@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PlayerVF Full Wiki</title>
-  <meta name="description" content="Full PlayerVF documentation generated from the feature document and lib source tree.">
+  <meta name="description" content="Full PlayerVF documentation generated from PlayerVFDoc partial files.">
   <meta name="theme-color" content="#07080d">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/wiki.css">
@@ -24,24 +24,12 @@
     <section class="hero">
       <span class="label">Full source wiki</span>
       <h1>PlayerVF developer documentation.</h1>
-      <p class="lead">This page expands the wiki using the full feature document plus the real source structure in <code>lib</code>. It documents the app areas, files, classes, responsibilities, and the main functions used by each part.</p>
+      <p class="lead">This page is generated from small PlayerVFDoc partial files. Edit the files under content/wiki and run scripts/build-wiki.mjs to rebuild the static GitHub Pages wiki.</p>
       <div class="doc-stats" aria-label="Documentation summary">
-        <div class="doc-stat">
-          <strong>12</strong>
-          <span>Main wiki sections</span>
-        </div>
-        <div class="doc-stat">
-          <strong>94</strong>
-          <span>Function index entries</span>
-        </div>
-        <div class="doc-stat">
-          <strong>lib</strong>
-          <span>Source tree documented</span>
-        </div>
-        <div class="doc-stat">
-          <strong>Python</strong>
-          <span>Backend overview included</span>
-        </div>
+        <div class="doc-stat"><strong>12</strong><span>Main wiki sections</span></div>
+        <div class="doc-stat"><strong>94</strong><span>Function index entries</span></div>
+        <div class="doc-stat"><strong>lib</strong><span>Source tree documented</span></div>
+        <div class="doc-stat"><strong>Photos</strong><span>Image blocks supported</span></div>
       </div>
     </section>
 
@@ -76,67 +64,21 @@
 
         <section id="repo-stats" class="card">
           <h2>Repository stats</h2>
-          <p>These numbers come from a fresh scan of <code>superstilist/PlayerVf</code> on GitHub: language percentages use GitHub byte totals, while file, character, and line counts use a shallow clone of the remote <code>master</code> branch at commit <code>a045995</code>.</p>
-          <div class="grid stats-grid">
-            <div class="mini stat-tile">
-              <strong>Dart</strong>
-              <span class="stat-number">90.25%</span>
-              <span>791,200 language bytes on GitHub.</span>
-            </div>
-            <div class="mini stat-tile">
-              <strong>Python</strong>
-              <span class="stat-number">9.75%</span>
-              <span>85,432 language bytes on GitHub.</span>
-            </div>
-            <div class="mini stat-tile">
-              <strong>Tracked files</strong>
-              <span class="stat-number">85</span>
-              <span>1,040,612 total tracked bytes; 59 files are text.</span>
-            </div>
-            <div class="mini stat-tile">
-              <strong>Text size</strong>
-              <span class="stat-number">949,566</span>
-              <span>Text characters across tracked remote source files, with 27,565 lines.</span>
-            </div>
-          </div>
-          <h3>Largest tracked extension groups</h3>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Extension</th>
-                  <th>Files</th>
-                  <th>Bytes</th>
-                  <th>Characters</th>
-                  <th>Lines</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td><code>.dart</code></td><td>47</td><td>814,895</td><td>814,785</td><td>23,742</td></tr>
-                <tr><td><code>.png</code></td><td>26</td><td>90,936</td><td>0</td><td>0</td></tr>
-                <tr><td><code>.py</code></td><td>3</td><td>87,745</td><td>87,745</td><td>2,316</td></tr>
-                <tr><td><code>.lock</code></td><td>1</td><td>32,748</td><td>32,748</td><td>1,051</td></tr>
-                <tr><td><code>.gitignore</code></td><td>1</td><td>6,330</td><td>6,330</td><td>164</td></tr>
-                <tr><td><code>.yaml</code></td><td>2</td><td>3,162</td><td>3,162</td><td>103</td></tr>
-                <tr><td><code>.md</code></td><td>1</td><td>2,343</td><td>2,343</td><td>122</td></tr>
-                <tr><td><code>.txt</code></td><td>2</td><td>1,141</td><td>1,141</td><td>27</td></tr>
-                <tr><td><code>.metadata</code></td><td>1</td><td>998</td><td>998</td><td>31</td></tr>
-                <tr><td><code>download</code></td><td>1</td><td>314</td><td>314</td><td>9</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <h3>Website and wiki characters</h3>
+          <p>GitHub language bytes from superstilist/PlayerVf: Dart 791,200 bytes (90.25%), Python 85,432 bytes (9.75%), total 876,632 bytes.</p>
+          <p>Remote master scan at commit a045995d6acd6b7cb2c5516e8b51dad3dc5ecca1: 85 tracked files, 59 text files, 1,040,612 total bytes, 949,566 text characters, 27,565 text lines.</p>
+          <p>Site wiki.html: generated from PlayerVFDoc partials.</p>
+          <p>Other listed site files are plain static GitHub Pages assets.</p>
           <div class="grid">
-            <div class="mini"><strong><code>wiki.html</code></strong><span>32,223 characters and 450 lines in the documented page file.</span></div>
-            <div class="mini"><strong>Listed site files</strong><span>60,705 characters and 1,587 lines across HTML, CSS, docs, and content files.</span></div>
-            <div class="mini"><strong>Other site files</strong><span>28,482 characters and 1,137 lines without <code>wiki.html</code>.</span></div>
-            <div class="mini"><strong>Stats data</strong><span>Saved in <code>content/repo-stats.json</code> for reuse by tooling or future pages.</span></div>
+            <div class="mini"><strong>Dart</strong><span>90.25%; 791,200 language bytes on GitHub.</span></div>
+            <div class="mini"><strong>Python</strong><span>9.75%; 85,432 language bytes on GitHub.</span></div>
+            <div class="mini"><strong>Tracked files</strong><span>85 files; 1,040,612 total tracked bytes; 59 files are text.</span></div>
+            <div class="mini"><strong>Text size</strong><span>949,566 text characters across tracked remote source files, with 27,565 lines.</span></div>
           </div>
         </section>
 
         <section id="architecture" class="card">
           <h2>Architecture</h2>
-          <p>The app is centered around <code>MusicService</code>. UI pages ask this service to scan, play, queue, shuffle, repeat, load lyrics, download from YouTube, update metadata, manage playlists, and persist state. <code>SettingsModel</code> owns persistent user preferences for appearance, paths, video behavior, decoders, and performance.</p>
+          <p>The app is centered around MusicService. UI pages ask this service to scan, play, queue, shuffle, repeat, load lyrics, download from YouTube, update metadata, manage playlists, and persist state. SettingsModel owns persistent user preferences for appearance, paths, video behavior, decoders, and performance.</p>
           <h3>Directory map</h3>
           <ul>
             <li><code>lib/main.dart</code>: app entrypoint, theme building, app shell, navigation, keyboard shortcuts, mini player, and player overlay.</li>
@@ -151,168 +93,115 @@
         <section id="models" class="card">
           <h2>Models</h2>
           <div class="grid">
-            <div class="mini"><strong><code>Cover</code></strong><span>Small data object for extracted cover bytes/path and cover metadata.</span></div>
-            <div class="mini"><strong><code>LyricLine</code>, <code>LyricsDocument</code></strong><span>Represent timed and plain lyrics. <code>activeIndexAt</code> chooses the lyric line for the current playback position.</span></div>
-            <div class="mini"><strong><code>Music</code></strong><span>Core track/media object: id, title, artist, album, path, cover, genre, duration, favorite status, play count, last played, and date added.</span></div>
-            <div class="mini"><strong><code>Playlist</code></strong><span>User/system playlist model with id, name, music IDs, createdAt, updatedAt, JSON import/export, and copy support.</span></div>
-            <div class="mini"><strong><code>PageState</code></strong><span>Small ChangeNotifier that stores selected high-level page: home, favorite, or playlist.</span></div>
-            <div class="mini"><strong><code>SettingsModel</code></strong><span>Persistent settings model for paths, theme mode, theme preset, particles, font, layout, view mode, decoder mode, video behavior, share backups, and performance.</span></div>
+            <div class="mini"><strong>Cover</strong><span>extracted cover bytes/path and cover metadata.</span></div>
+            <div class="mini"><strong>LyricLine / LyricsDocument</strong><span>timed and plain lyrics; activeIndexAt chooses the line for the current playback position.</span></div>
+            <div class="mini"><strong>Music</strong><span>track/media object with id, title, artist, album, path, cover, genre, duration, favorite status, play count, last played, and date added.</span></div>
+            <div class="mini"><strong>Playlist</strong><span>playlist model with id, name, music IDs, timestamps, JSON import/export, and copy support.</span></div>
+            <div class="mini"><strong>PageState</strong><span>selected high-level page state.</span></div>
+            <div class="mini"><strong>SettingsModel</strong><span>paths, theme mode, theme preset, particles, font, layout, view mode, decoder mode, video behavior, share backups, and performance.</span></div>
+            <div class="mini"><strong>ViewMode</strong><span>card or list.</span></div>
+            <div class="mini"><strong>NavPosition</strong><span>top, bottom, left, right.</span></div>
+            <div class="mini"><strong>ThemePreset</strong><span>material, graphite, classic, fox, anime, azure, cosmic, sunset, midnight.</span></div>
+            <div class="mini"><strong>ParticleEffect</strong><span>none, sakura, snow, stars, bubbles, rain.</span></div>
+            <div class="mini"><strong>DecoderMode</strong><span>auto, software, hardware.</span></div>
+            <div class="mini"><strong>PerformanceMode</strong><span>auto, quality, balanced, batterySaver, maxPerformance.</span></div>
           </div>
-          <h3>Settings enums</h3>
-          <ul>
-            <li><code>ViewMode</code>: card or list.</li>
-            <li><code>NavPosition</code>: top, bottom, left, right.</li>
-            <li><code>ThemePreset</code>: material, graphite, classic, fox, anime, azure, cosmic, sunset, midnight.</li>
-            <li><code>ParticleEffect</code>: none, sakura, snow, stars, bubbles, rain.</li>
-            <li><code>DecoderMode</code>: auto, software, hardware.</li>
-            <li><code>PerformanceMode</code>: auto, quality, balanced, batterySaver, maxPerformance.</li>
-          </ul>
         </section>
 
         <section id="main" class="card">
           <h2>Main app</h2>
-          <h3><code>main.dart</code></h3>
-          <p>The entrypoint initializes media playback, configures desktop behavior, installs a Windows keyboard assertion guard, and runs <code>MyApp</code>. The app creates <code>SettingsModel</code> and <code>MusicService</code> providers and builds a Material theme from settings.</p>
+          <p>main.dart initializes media playback, configures desktop behavior, installs a Windows keyboard assertion guard, and runs MyApp. The app creates SettingsModel and MusicService providers and builds a Material theme from settings.</p>
           <div class="grid">
-            <div class="mini"><strong><code>main()</code></strong><span>Starts Flutter, initializes playback libraries, applies desktop setup, and launches the app.</span></div>
-            <div class="mini"><strong><code>MyApp</code></strong><span>Provides settings and music services, then builds themed app navigation.</span></div>
-            <div class="mini"><strong><code>_buildAppTheme</code></strong><span>Creates the app theme from preset, brightness, accent color, and glass intensity.</span></div>
-            <div class="mini"><strong><code>MainNavigationScreen</code></strong><span>Main shell for tabs, mini player, search, shortcuts, navigation dock, and full player overlay.</span></div>
+            <div class="mini"><strong>main()</strong><span>Starts Flutter, initializes playback libraries, applies desktop setup, and launches the app.</span></div>
+            <div class="mini"><strong>MyApp</strong><span>Provides settings and music services, then builds themed app navigation.</span></div>
+            <div class="mini"><strong>_buildAppTheme</strong><span>Creates the app theme from preset, brightness, accent color, and glass intensity.</span></div>
+            <div class="mini"><strong>MainNavigationScreen</strong><span>Main shell for tabs, mini player, search, shortcuts, navigation dock, and full player overlay.</span></div>
           </div>
-          <h3>Main navigation responsibilities</h3>
-          <ul>
-            <li>Selects between Home, Favorites, Playlists, YouTube Music, and Share pages.</li>
-            <li>Handles play/pause, next, previous/restart, seek, volume, mute, and fullscreen shortcuts.</li>
-            <li>Builds top app bar, navigation dock, search bar, content area, and mini player.</li>
-            <li>Uses <code>_MiniPlayPauseButton</code> for responsive optimistic play/pause UI.</li>
-          </ul>
+          <p>Selects between Home, Favorites, Playlists, YouTube Music, and Share pages.</p>
+          <p>Handles play/pause, next, previous/restart, seek, volume, mute, and fullscreen shortcuts.</p>
+          <p>Builds top app bar, navigation dock, search bar, content area, and mini player.</p>
+          <p>Uses _MiniPlayPauseButton for responsive optimistic play/pause UI.</p>
         </section>
 
         <section id="pages" class="card">
           <h2>Pages</h2>
-          <h3><code>HomeScreen</code></h3>
-          <p>Home/library smart playlist page. It builds responsive playlist and library layouts, square playlist cards, playlist collage artwork, add-playlist flow, empty state, and automatic grid counts.</p>
-          <h3><code>FavoritePage</code></h3>
-          <p>Displays favorite tracks with adaptive grid/list behavior and opens tracks through the music service.</p>
-          <h3><code>PlaylistPage</code></h3>
-          <p>Shows all playlists, an empty state, adaptive grid count, and playlist creation dialog.</p>
-          <h3><code>PlaylistDetailPage</code></h3>
-          <p>Displays songs inside one playlist, opens player from details, builds playlist collage artwork, calculates grid count, and supports playlist rename/edit dialog.</p>
-          <h3><code>PlayerPage</code></h3>
-          <p>Full audio player with cover-based background, hero artwork, metadata, playback controls, queue preview, more options, add-to-playlist dialog, track detail view, queue sheet, lyrics sheet, fullscreen lyrics, online lyrics search, custom lyrics search, and lyrics editing.</p>
-          <h3><code>VideoPage</code></h3>
-          <p>Full video player with local and YouTube video support, palette background, quality switching, subtitle tools, fullscreen video page, keyboard intents, fullscreen controls, local manifest loading, YouTube detail loading, and quick queue.</p>
-          <h3><code>YoutubeMusicPage</code></h3>
-          <p>Searches YouTube Music, runs bridge smoke test, downloads audio/video/subtitles, chooses download options, detects already downloaded audio/video/subtitle marks, streams results, and renders search panel/result tiles.</p>
-          <h3><code>SharePage</code></h3>
-          <p>Starts/stops local sharing, discovers devices, connects to remote devices, syncs selected tracks, pauses/resumes/cancels transfer, renders host card, connect card, device rows, track rows, transfer flow, and status messages.</p>
-          <h3><code>SettingsScreen</code></h3>
-          <p>Controls scanning, source paths, YouTube download path, cache clear, song gap, video settings, subtitle picking, decoder mode, performance mode, background blur, and folder import messaging.</p>
-          <h3><code>AppearanceScreen</code></h3>
-          <p>Controls theme preset, light/dark/system theme, particles, custom accent color, RGB sliders, nav position, font size, border radius, glass effect, view mode, card size, margins, and release sliders.</p>
+          <div class="grid">
+            <div class="mini"><strong>HomeScreen</strong><span>responsive playlist and library layouts, square playlist cards, playlist collage artwork, add-playlist flow, empty state, and automatic grid counts.</span></div>
+            <div class="mini"><strong>FavoritePage</strong><span>favorite tracks with adaptive grid/list behavior.</span></div>
+            <div class="mini"><strong>PlaylistPage</strong><span>playlist overview, empty state, adaptive grid count, and playlist creation dialog.</span></div>
+            <div class="mini"><strong>PlaylistDetailPage</strong><span>songs inside one playlist, player opening, collage artwork, grid count, and playlist rename/edit dialog.</span></div>
+            <div class="mini"><strong>PlayerPage</strong><span>audio player, cover background, hero artwork, metadata, controls, queue, track details, lyrics, fullscreen lyrics, online search, custom search, and editing.</span></div>
+            <div class="mini"><strong>VideoPage</strong><span>local/YouTube video player, palette background, quality switching, subtitles, fullscreen video, local manifests, YouTube details, and quick queue.</span></div>
+            <div class="mini"><strong>YoutubeMusicPage</strong><span>YouTube Music search, bridge smoke test, downloads, option picking, downloaded mark detection, streaming, and result tiles.</span></div>
+            <div class="mini"><strong>SharePage</strong><span>local sharing, discovery, remote connection, sync, pause/resume/cancel, transfer UI, and status messages.</span></div>
+            <div class="mini"><strong>SettingsScreen</strong><span>scanning, source paths, YouTube path, cache, song gap, video settings, subtitles, decoder mode, performance, and folder import.</span></div>
+            <div class="mini"><strong>AppearanceScreen</strong><span>theme preset, theme mode, particles, colors, RGB, navigation position, font size, radius, glass, view mode, cards, margins, and sliders.</span></div>
+          </div>
         </section>
 
         <section id="services" class="card">
           <h2>Services</h2>
-          <h3><code>MusicService</code></h3>
-          <p>The central service owns library state, selected track, playback state, player backend, volume, queue IDs, shuffle/repeat, playlists, lyrics, audio effects, subtitles, video state, streaming state, snapshots, and saved playback state.</p>
-          <h4>Main groups inside <code>MusicService</code></h4>
-          <ul>
-            <li>Initialization: video controller, player binding, async settings/library load, backend callbacks.</li>
-            <li>Playback: play/pause/toggle, next, previous, seek, queue playback, restart, repeat, shuffle, completion behavior.</li>
-            <li>Media backend: opening local files, URLs, streams, downloaded videos, YouTube streams, and applying decoder settings.</li>
-            <li>Audio effects: enable/disable, equalizer, presets, pitch, speed, reverb, per-song/global mode, native Windows filters, MPV fallback filters.</li>
-            <li>Lyrics: sidecar lookup, manual lyrics paths, online LRCLIB search, custom queries, save/edit lyrics, active lyrics ownership.</li>
-            <li>Library: scan/import, merge remembered state, cover extraction, downloaded video quality collapse, favorites/stats/playlists persistence.</li>
-            <li>Subtitles: sidecar candidates, URL subtitles, local subtitle files, disable subtitles, and apply sidecar subtitle when present.</li>
-          </ul>
-          <h3>Other services</h3>
+          <p>MusicService owns library state, selected track, playback state, player backend, volume, queue IDs, shuffle/repeat, playlists, lyrics, audio effects, subtitles, video state, streaming state, snapshots, and saved playback state.</p>
           <div class="grid">
-            <div class="mini"><strong><code>MusicScannerService</code></strong><span>Scans paths, reads Android media hints, detects audio/video files, parses metadata, extracts cover art, and creates <code>Music</code> objects.</span></div>
-            <div class="mini"><strong><code>ID3Parser</code></strong><span>Parses MP3 ID3v2/v1, APE, MP4/M4A, FLAC, cover art, duration, and filename fallback metadata.</span></div>
-            <div class="mini"><strong><code>CoverExtractor</code></strong><span>Extracts cover art from local files or assets next to bundled music.</span></div>
-            <div class="mini"><strong><code>CoverColorService</code></strong><span>Creates cover palettes for player/video backgrounds and fallback colors.</span></div>
-            <div class="mini"><strong><code>YoutubeMusicService</code></strong><span>Search, download, stream, warm stream cache, resolve download directory, run Python/native helper, and convert errors into friendly messages.</span></div>
-            <div class="mini"><strong><code>LocalShareService</code></strong><span>Local HTTP share server, discovery, manifest fetch, file transfer, pause/resume/cancel, duplicate checking, and safe filenames.</span></div>
-            <div class="mini"><strong><code>WifiDirectService</code></strong><span>Android Wi-Fi Direct permissions, discovery, connect, disconnect, stop discovery, and trust device IDs.</span></div>
-            <div class="mini"><strong><code>MusicBrainzTagService</code></strong><span>Searches MusicBrainz, scores tag matches, normalizes tokens, and returns selected recording metadata.</span></div>
-            <div class="mini"><strong><code>PlayerAudioHandler</code></strong><span>Background/OS media controls, media buttons, timeline, metadata, Windows SMTC guard, and external playback state.</span></div>
-            <div class="mini"><strong><code>PerformancePolicy</code></strong><span>Decides animation duration, particles, blur, cache scale, and visual cost by performance mode.</span></div>
-            <div class="mini"><strong><code>Responsive</code></strong><span>Viewport scale helpers and extensions like <code>10.w</code>, <code>10.h</code>, and <code>14.sp</code>.</span></div>
-            <div class="mini"><strong><code>web_folder_picker</code></strong><span>Web folder import implementation and stubs for non-web platforms.</span></div>
+            <div class="mini"><strong>MusicService</strong><span>central library, track, playback, queue, shuffle/repeat, playlists, lyrics, effects, subtitles, video, streaming, snapshots, and resume state.</span></div>
+            <div class="mini"><strong>MusicScannerService</strong><span>scans paths, reads Android hints, detects media, parses metadata, extracts covers, and creates Music objects.</span></div>
+            <div class="mini"><strong>ID3Parser</strong><span>parses MP3, APE, MP4/M4A, FLAC, cover art, duration, and filename fallback metadata.</span></div>
+            <div class="mini"><strong>CoverExtractor</strong><span>extracts cover art from local files or bundled assets.</span></div>
+            <div class="mini"><strong>CoverColorService</strong><span>creates cover palettes and fallback colors.</span></div>
+            <div class="mini"><strong>YoutubeMusicService</strong><span>search, download, stream, warm cache, resolve download directory, run helper code, and friendly errors.</span></div>
+            <div class="mini"><strong>LocalShareService</strong><span>HTTP share server, discovery, manifest fetch, transfer, pause/resume/cancel, duplicate checks, safe filenames.</span></div>
+            <div class="mini"><strong>WifiDirectService</strong><span>Android Wi-Fi Direct permissions, discovery, connection, disconnect, stop discovery, and trusted devices.</span></div>
+            <div class="mini"><strong>MusicBrainzTagService</strong><span>MusicBrainz search, scoring, token normalization, and recording metadata.</span></div>
+            <div class="mini"><strong>PlayerAudioHandler</strong><span>OS media controls, media buttons, timeline, metadata, Windows SMTC guard, and external playback state.</span></div>
+            <div class="mini"><strong>PerformancePolicy</strong><span>animation, particles, blur, cache scale, and visual-cost decisions.</span></div>
+            <div class="mini"><strong>Responsive</strong><span>viewport scaling and sizing helpers.</span></div>
           </div>
         </section>
 
         <section id="widgets" class="card">
           <h2>Widgets</h2>
           <div class="grid">
-            <div class="mini"><strong><code>MusicCard</code></strong><span>Track card/list row, context menu, track info, edit metadata, MusicBrainz tagging, cover picking, and add-to-playlist dialog.</span></div>
-            <div class="mini"><strong><code>PlaylistCard</code></strong><span>Large playlist card with cover collage, context menu, and menu items.</span></div>
-            <div class="mini"><strong><code>SmallPlaylistCard</code></strong><span>Compact playlist tile with deterministic color by playlist id.</span></div>
-            <div class="mini"><strong><code>PlaybackProgressControl</code></strong><span>Stable progress slider with bounded position and progress-to-duration conversion.</span></div>
-            <div class="mini"><strong><code>AudioEffectsMenu</code></strong><span>Bottom sheet for speed, pitch, reverb, EQ presets, EQ bands, song/global scope, tone buttons, and reset actions.</span></div>
-            <div class="mini"><strong><code>CoverArtTexture</code></strong><span>Shows local, network, blob, or fallback cover art; tries multiple network candidates.</span></div>
-            <div class="mini"><strong><code>GlassContainer</code></strong><span>Reusable clipped blur/translucent panel with surface color calculation.</span></div>
-            <div class="mini"><strong><code>ParticleSystem</code></strong><span>Animated sakura, snow, stars, bubbles, or rain particles with performance scaling.</span></div>
-            <div class="mini"><strong><code>StableVideoSurface</code></strong><span>Keeps video texture stable and schedules Windows texture resize.</span></div>
-            <div class="mini"><strong><code>SettingsDrawer</code></strong><span>Compact settings drawer for paths, YouTube download location, web folder messages, and import results.</span></div>
-            <div class="mini"><strong><code>FadeInUpAnimation</code></strong><span>Simple entrance animation wrapper.</span></div>
-            <div class="mini"><strong><code>ShowUpControl</code></strong><span>Visibility toggle wrapper for show/hide controls.</span></div>
+            <div class="mini"><strong>MusicCard</strong><span>track card/list row, context menu, details, metadata edit, MusicBrainz tagging, cover picking, and add-to-playlist.</span></div>
+            <div class="mini"><strong>PlaylistCard</strong><span>large playlist card with cover collage and context menu.</span></div>
+            <div class="mini"><strong>SmallPlaylistCard</strong><span>compact playlist tile with deterministic color.</span></div>
+            <div class="mini"><strong>PlaybackProgressControl</strong><span>stable progress slider and position conversion.</span></div>
+            <div class="mini"><strong>AudioEffectsMenu</strong><span>speed, pitch, reverb, EQ presets, bands, scope, tone buttons, and reset actions.</span></div>
+            <div class="mini"><strong>CoverArtTexture</strong><span>local, network, blob, or fallback cover rendering.</span></div>
+            <div class="mini"><strong>GlassContainer</strong><span>clipped blur/translucent panel.</span></div>
+            <div class="mini"><strong>ParticleSystem</strong><span>sakura, snow, stars, bubbles, and rain particles.</span></div>
+            <div class="mini"><strong>StableVideoSurface</strong><span>stable video texture and Windows resize scheduling.</span></div>
+            <div class="mini"><strong>SettingsDrawer</strong><span>compact paths and YouTube download settings.</span></div>
+            <div class="mini"><strong>FadeInUpAnimation</strong><span>entrance animation wrapper.</span></div>
+            <div class="mini"><strong>ShowUpControl</strong><span>visibility toggle wrapper.</span></div>
           </div>
         </section>
 
         <section id="python" class="card">
           <h2>Python backend</h2>
-          <p><code>lib/python/api.py</code> supports desktop YouTube Music search, audio/video downloads, subtitles, thumbnails, metadata, safe filenames, duplicate-safe output paths, and stream resolution.</p>
+          <p>lib/python/api.py supports desktop YouTube Music search, audio/video downloads, subtitles, thumbnails, metadata, safe filenames, duplicate-safe output paths, stream resolution, and progress events.</p>
           <div class="grid">
-            <div class="mini"><strong><code>SearchItem</code></strong><span>Normalized search result data passed between Python and Flutter.</span></div>
-            <div class="mini"><strong><code>MediaDownloader</code></strong><span>Handles detailed media download behavior, output naming, metadata, covers, and final library file selection.</span></div>
-            <div class="mini"><strong>Search</strong><span><code>search_youtube_music</code> returns normalized JSON search results.</span></div>
-            <div class="mini"><strong>Download</strong><span><code>download_youtube_music</code> downloads audio/video/subtitles and returns downloaded file paths.</span></div>
-            <div class="mini"><strong>Stream</strong><span><code>stream_youtube_music</code> resolves stream URLs, qualities, and subtitle data.</span></div>
-            <div class="mini"><strong>Utilities</strong><span>Safe filenames, MIME detection, thumbnail selection, high-quality thumbnail URLs, duration parsing, and progress events.</span></div>
+            <div class="mini"><strong>SearchItem</strong><span>normalized search result data passed between Python and Flutter.</span></div>
+            <div class="mini"><strong>MediaDownloader</strong><span>detailed media download behavior, output naming, metadata, covers, and final library file selection.</span></div>
+            <div class="mini"><strong>Search</strong><span>search_youtube_music returns normalized JSON search results.</span></div>
+            <div class="mini"><strong>Download</strong><span>download_youtube_music downloads audio/video/subtitles and returns downloaded file paths.</span></div>
+            <div class="mini"><strong>Stream</strong><span>stream_youtube_music resolves stream URLs, qualities, and subtitle data.</span></div>
+            <div class="mini"><strong>Utilities</strong><span>safe filenames, MIME detection, thumbnail selection, high-quality thumbnail URLs, duration parsing, and progress events.</span></div>
           </div>
         </section>
 
         <section id="flows" class="card">
           <h2>Data flows</h2>
-          <h3>Local scan flow</h3>
-          <ol>
-            <li>User adds or updates a music path in settings.</li>
-            <li><code>SettingsModel</code> saves the path.</li>
-            <li><code>MusicService</code> asks <code>MusicScannerService</code> to scan.</li>
-            <li><code>ID3Parser</code> and <code>CoverExtractor</code> parse metadata and artwork.</li>
-            <li>Old favorites, stats, and playlist identity are merged back.</li>
-            <li>Library snapshot is saved and the UI updates.</li>
-          </ol>
-          <h3>Playback flow</h3>
-          <ol>
-            <li>User taps a track or queue item.</li>
-            <li><code>MusicService</code> selects the track and prepares the player backend.</li>
-            <li>Audio effects and decoder settings are applied.</li>
-            <li>Playback starts and <code>PlayerAudioHandler</code> updates OS controls.</li>
-          </ol>
-          <h3>YouTube download flow</h3>
-          <ol>
-            <li>User searches from <code>YoutubeMusicPage</code>.</li>
-            <li><code>YoutubeMusicService</code> calls Python or Android helper code.</li>
-            <li>User selects audio/video/subtitle options.</li>
-            <li>Backend downloads files and returns paths.</li>
-            <li>Library refresh/import makes the files available in PlayerVF.</li>
-          </ol>
-          <h3>Sharing flow</h3>
-          <ol>
-            <li>Host starts a share server.</li>
-            <li>Receiver discovers or connects to the share server.</li>
-            <li>Receiver fetches a manifest and selects tracks.</li>
-            <li><code>LocalShareService</code> downloads files with progress and duplicate checks.</li>
-          </ol>
+          <div class="grid">
+            <div class="mini"><strong>Local scan</strong><span>settings path, scanner, ID3Parser/CoverExtractor, merge remembered state, save snapshot, update UI.</span></div>
+            <div class="mini"><strong>Playback</strong><span>user selects track, MusicService prepares backend, applies effects/decoders, starts playback, updates PlayerAudioHandler.</span></div>
+            <div class="mini"><strong>YouTube download</strong><span>search page, YoutubeMusicService, helper backend, selected options, downloaded paths, library refresh/import.</span></div>
+            <div class="mini"><strong>Sharing</strong><span>host server, receiver discovery, manifest fetch, selected tracks, transfer with progress and duplicate checks.</span></div>
+          </div>
         </section>
 
         <section id="function-index" class="card">
           <h2>Function index</h2>
-          <p>This index is grouped from the real source files under <code>lib</code>. It focuses on named classes and main methods instead of generated/cache files.</p>
-          <h3>Models</h3>
+          <p>This index is grouped from the real source files under lib. It focuses on named classes and main methods instead of generated/cache files.</p>
           <ul class="function-list">
             <li><code>Cover</code></li>
             <li><code>LyricLine</code></li>
@@ -335,10 +224,6 @@
             <li><code>SettingsModel.addMusicPath</code></li>
             <li><code>SettingsModel.removeMusicPath</code></li>
             <li><code>SettingsModel.clearAllPaths</code></li>
-          </ul>
-
-          <h3>Pages</h3>
-          <ul class="function-list">
             <li><code>HomeScreen.build</code></li>
             <li><code>HomeScreen._buildResponsiveLayout</code></li>
             <li><code>HomeScreen._showCreatePlaylistDialog</code></li>
@@ -366,10 +251,6 @@
             <li><code>SettingsScreen._pickSubtitleFile</code></li>
             <li><code>AppearanceScreen._buildPresetButton</code></li>
             <li><code>AppearanceScreen._buildAccentColorPicker</code></li>
-          </ul>
-
-          <h3>Services</h3>
-          <ul class="function-list">
             <li><code>MusicService._initializeAsync</code></li>
             <li><code>MusicService._initPlayer</code></li>
             <li><code>MusicService.setEffectsEnabled</code></li>
@@ -400,10 +281,6 @@
             <li><code>PlayerAudioHandler.updateNowPlaying</code></li>
             <li><code>PlayerAudioHandler.skipToNext</code></li>
             <li><code>PerformancePolicy.animation</code></li>
-          </ul>
-
-          <h3>Widgets and Python</h3>
-          <ul class="function-list">
             <li><code>MusicCard._showTrackInfoDialog</code></li>
             <li><code>MusicCard._showEditMetadataDialog</code></li>
             <li><code>MusicCard._autoTagWithMusicBrainz</code></li>
@@ -421,19 +298,19 @@
             <li><code>api._collect_subtitles</code></li>
             <li><code>api._main</code></li>
           </ul>
-          <div class="file-note">Note: the source contains many more private helper functions in the large player/video/service files. This wiki documents the full source areas and the main callable responsibilities, while avoiding raw code dumps.</div>
         </section>
 
         <section id="future" class="card">
-          <h2>Notes for future development</h2>
-          <ul>
-            <li><code>MusicService</code> is very large and could eventually split into playback, library, lyrics, queue, effects, and persistence services.</li>
-            <li>Python desktop and Android helper behavior should stay aligned when changing YouTube search, stream, or download features.</li>
-            <li>Downloaded video manifests and subtitle metadata should be treated as stable formats once users have files on disk.</li>
-            <li>Settings are stored with SharedPreferences keys; renaming keys without migration can lose user preferences.</li>
-            <li>Library identity depends on IDs and file paths, so changing ID logic can affect favorites, playlists, stats, and resume data.</li>
-            <li>Audio effect behavior differs by backend and platform; Windows native filters and generic media_kit paths both need testing after changes.</li>
-          </ul>
+          <h2>Notes</h2>
+          <p>MusicService can be split later. Python desktop and Android helper behavior should stay aligned. Downloaded manifest formats should stay stable. SharedPreferences keys need migration if renamed. Library identity changes affect favorites, playlists, stats, and resume data. Audio effects need testing across Windows native and media_kit backends.</p>
+          <div class="grid">
+            <div class="mini"><strong>MusicService</strong><span>Can eventually split into playback, library, lyrics, queue, effects, and persistence services.</span></div>
+            <div class="mini"><strong>Python helpers</strong><span>Desktop and Android helper behavior should stay aligned when changing YouTube search, stream, or download features.</span></div>
+            <div class="mini"><strong>Downloaded manifests</strong><span>Video manifests and subtitle metadata should be treated as stable formats once users have files on disk.</span></div>
+            <div class="mini"><strong>Settings storage</strong><span>SharedPreferences key renames need migrations.</span></div>
+            <div class="mini"><strong>Library identity</strong><span>ID/path changes can affect favorites, playlists, stats, and resume data.</span></div>
+            <div class="mini"><strong>Audio effects</strong><span>Windows native filters and generic media_kit paths both need testing after changes.</span></div>
+          </div>
         </section>
       </div>
     </div>

@@ -1,0 +1,9 @@
+::section python "Python backend"
+lib/python/api.py supports desktop YouTube Music search, audio/video downloads, subtitles, thumbnails, metadata, safe filenames, duplicate-safe output paths, stream resolution, and progress events.
+
+SearchItem => normalized search result data passed between Python and Flutter.
+MediaDownloader => detailed media download behavior, output naming, metadata, covers, and final library file selection.
+Search => search_youtube_music returns normalized JSON search results.
+Download => download_youtube_music downloads audio/video/subtitles and returns downloaded file paths.
+Stream => stream_youtube_music resolves stream URLs, qualities, and subtitle data.
+Utilities => safe filenames, MIME detection, thumbnail selection, high-quality thumbnail URLs, duration parsing, and progress events.

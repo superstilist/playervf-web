@@ -1,0 +1,11 @@
+::section pages "Pages"
+HomeScreen => responsive playlist and library layouts, square playlist cards, playlist collage artwork, add-playlist flow, empty state, and automatic grid counts.
+FavoritePage => favorite tracks with adaptive grid/list behavior.
+PlaylistPage => playlist overview, empty state, adaptive grid count, and playlist creation dialog.
+PlaylistDetailPage => songs inside one playlist, player opening, collage artwork, grid count, and playlist rename/edit dialog.
+PlayerPage => audio player, cover background, hero artwork, metadata, controls, queue, track details, lyrics, fullscreen lyrics, online search, custom search, and editing.
+VideoPage => local/YouTube video player, palette background, quality switching, subtitles, fullscreen video, local manifests, YouTube details, and quick queue.
+YoutubeMusicPage => YouTube Music search, bridge smoke test, downloads, option picking, downloaded mark detection, streaming, and result tiles.
+SharePage => local sharing, discovery, remote connection, sync, pause/resume/cancel, transfer UI, and status messages.
+SettingsScreen => scanning, source paths, YouTube path, cache, song gap, video settings, subtitles, decoder mode, performance, and folder import.
+AppearanceScreen => theme preset, theme mode, particles, colors, RGB, navigation position, font size, radius, glass, view mode, cards, margins, and sliders.

@@ -1,0 +1,10 @@
+::section architecture "Architecture"
+The app is centered around MusicService. UI pages ask this service to scan, play, queue, shuffle, repeat, load lyrics, download from YouTube, update metadata, manage playlists, and persist state. SettingsModel owns persistent user preferences for appearance, paths, video behavior, decoders, and performance.
+
+::files
+lib/main.dart => app entrypoint, theme building, app shell, navigation, keyboard shortcuts, mini player, and player overlay.
+lib/models => serializable state objects such as music, playlists, settings, lyrics, covers, and selected page state.
+lib/pages => full screens for library, favorites, playlists, player, video, YouTube Music, sharing, settings, and appearance.
+lib/services => playback, scanning, metadata parsing, sharing, YouTube, MusicBrainz, responsiveness, performance policy, and OS media controls.
+lib/widgets => reusable UI pieces such as cards, player controls, cover art, audio effects, particles, glass containers, and video surfaces.
+lib/python => desktop Python backend for YouTube search, stream resolution, download, subtitles, thumbnails, and metadata files.

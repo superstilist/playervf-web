@@ -164,6 +164,41 @@ li {
   line-height: 1.65;
 }
 
+.wiki-photo {
+  margin: 18px 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+.wiki-photo img {
+  display: block;
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+}
+
+.wiki-photo figcaption {
+  padding: 12px 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.photo-placeholder {
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+  padding: 18px;
+  color: var(--muted);
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, .08) 25%, transparent 25%) 0 0 / 18px 18px,
+    linear-gradient(135deg, transparent 75%, rgba(255, 255, 255, .08) 75%) 0 0 / 18px 18px,
+    var(--surface-3);
+}
+
 .stats-grid {
   grid-template-columns: repeat(4, 1fr);
 }

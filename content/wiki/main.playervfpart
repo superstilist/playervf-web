@@ -1,0 +1,12 @@
+::section main "Main app"
+main.dart initializes media playback, configures desktop behavior, installs a Windows keyboard assertion guard, and runs MyApp. The app creates SettingsModel and MusicService providers and builds a Material theme from settings.
+
+main() => Starts Flutter, initializes playback libraries, applies desktop setup, and launches the app.
+MyApp => Provides settings and music services, then builds themed app navigation.
+_buildAppTheme => Creates the app theme from preset, brightness, accent color, and glass intensity.
+MainNavigationScreen => Main shell for tabs, mini player, search, shortcuts, navigation dock, and full player overlay.
+
+Selects between Home, Favorites, Playlists, YouTube Music, and Share pages.
+Handles play/pause, next, previous/restart, seek, volume, mute, and fullscreen shortcuts.
+Builds top app bar, navigation dock, search bar, content area, and mini player.
+Uses _MiniPlayPauseButton for responsive optimistic play/pause UI.

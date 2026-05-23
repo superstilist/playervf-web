@@ -7,7 +7,7 @@
   <meta name="description" content="Download PlayerVF for Windows, Android, and Linux. Simple, clean builds with stable and beta options.">
   <meta name="theme-color" content="#111318">
   <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/downloads.css">
+  <link rel="stylesheet" href="assets/css/downloads.css?v=gallery5">
 </head>
 <body>
   <header class="site-header">
@@ -32,6 +32,23 @@
           <a class="button secondary" href="wiki.html">Read wiki</a>
         </div>
       </div>
+    </section>
+
+    <section class="showcase" aria-labelledby="showcase-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-title">Preview</p>
+          <h2 id="showcase-title">PC view preview.</h2>
+        </div>
+      </div>
+
+      <button class="screenshot panel feature-shot preview-button" type="button" data-open-gallery aria-label="Open PC screenshot gallery">
+        <figure>
+          <img src="assets/image/pc_main_page.png" alt="PlayerVF main page" loading="eager">
+          <figcaption>PC view - Main page</figcaption>
+        </figure>
+        <span class="gallery-hint">Open PC gallery</span>
+      </button>
     </section>
 
     <section id="downloads" aria-labelledby="downloads-title">
@@ -84,6 +101,58 @@
     </div>
   </dialog>
 
+  <dialog class="gallery-dialog" aria-labelledby="gallery-title">
+    <div class="gallery-panel panel">
+      <div class="install-head">
+        <div>
+          <p class="section-title">PC screenshots</p>
+          <h2 id="gallery-title">PlayerVF PC view gallery</h2>
+        </div>
+        <button class="icon-button close-button" type="button" aria-label="Close PC screenshot gallery" data-close-gallery></button>
+      </div>
+
+      <div class="gallery-grid">
+        <button class="gallery-thumb screenshot panel" type="button" data-gallery-src="assets/image/pc_main_page.png" data-gallery-title="PC view - Main page" aria-label="Open PC view main page full size">
+          <img src="assets/image/pc_main_page.png" alt="PlayerVF PC main page" loading="lazy">
+          <figcaption>PC view - Main page</figcaption>
+        </button>
+
+        <button class="gallery-thumb screenshot panel" type="button" data-gallery-src="assets/image/pc_main_page1.png" data-gallery-title="PC view - Main page 2" aria-label="Open PC view main page 2 full size">
+          <img src="assets/image/pc_main_page1.png" alt="PlayerVF PC second main page" loading="lazy">
+          <figcaption>PC view - Main page 2</figcaption>
+        </button>
+
+        <button class="gallery-thumb screenshot panel" type="button" data-gallery-src="assets/image/pc_lyric_page.png" data-gallery-title="PC view - Lyric view" aria-label="Open PC view lyric view full size">
+          <img src="assets/image/pc_lyric_page.png" alt="PlayerVF PC lyric view" loading="lazy">
+          <figcaption>PC view - Lyric view</figcaption>
+        </button>
+
+        <button class="gallery-thumb screenshot panel" type="button" data-gallery-src="assets/image/pc_player_page.png" data-gallery-title="PC view - Player page" aria-label="Open PC view player page full size">
+          <img src="assets/image/pc_player_page.png" alt="PlayerVF PC player page" loading="lazy">
+          <figcaption>PC view - Player page</figcaption>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="image-dialog" aria-labelledby="image-view-title">
+    <div class="image-panel panel">
+      <div class="install-head">
+        <div>
+          <p class="section-title">PC screenshot</p>
+          <h2 id="image-view-title" data-image-title>PC view</h2>
+        </div>
+        <button class="icon-button close-button" type="button" aria-label="Close full screenshot" data-close-image></button>
+      </div>
+      <img src="" alt="" data-image-view>
+      <div class="image-controls" aria-label="Screenshot navigation">
+        <button class="image-arrow" type="button" aria-label="Previous screenshot" data-prev-image></button>
+        <span data-image-count></span>
+        <button class="image-arrow next" type="button" aria-label="Next screenshot" data-next-image></button>
+      </div>
+    </div>
+  </dialog>
+
   <footer>
     <div class="wrap footer-row">
       <span>PlayerVF Downloads</span>
@@ -104,18 +173,81 @@ new-gen(betav3):
 
     const downloadsRoot = document.querySelector('[data-downloads]');
     const linuxDialog = document.querySelector('.install-dialog');
+    const galleryDialog = document.querySelector('.gallery-dialog');
+    const imageDialog = document.querySelector('.image-dialog');
+    const imageView = document.querySelector('[data-image-view]');
+    const imageTitle = document.querySelector('[data-image-title]');
+    const imageCount = document.querySelector('[data-image-count]');
     const copyStatus = document.querySelector('[data-copy-status]');
     const linuxZipLink = document.querySelector('[data-linux-zip]');
     const linuxCurlCode = document.querySelector('[data-linux-curl]');
     const linuxWgetCode = document.querySelector('[data-linux-wget]');
+    const galleryItems = Array.from(document.querySelectorAll('[data-gallery-src]')).map((item) => ({
+      src: item.dataset.gallerySrc,
+      title: item.dataset.galleryTitle
+    }));
+    let activeImageIndex = 0;
 
     document.querySelector('[data-close-linux-install]').addEventListener('click', () => {
       linuxDialog.close();
     });
 
+    document.querySelector('[data-open-gallery]').addEventListener('click', () => {
+      galleryDialog.showModal();
+    });
+
+    document.querySelector('[data-close-gallery]').addEventListener('click', () => {
+      galleryDialog.close();
+    });
+
+    document.querySelector('[data-close-image]').addEventListener('click', () => {
+      imageDialog.close();
+    });
+
+    document.querySelector('[data-prev-image]').addEventListener('click', () => {
+      showImageAt(activeImageIndex - 1, 'prev');
+    });
+
+    document.querySelector('[data-next-image]').addEventListener('click', () => {
+      showImageAt(activeImageIndex + 1, 'next');
+    });
+
     linuxDialog.addEventListener('click', (event) => {
       if (event.target === linuxDialog) {
         linuxDialog.close();
+      }
+    });
+
+    galleryDialog.addEventListener('click', (event) => {
+      if (event.target === galleryDialog) {
+        galleryDialog.close();
+      }
+    });
+
+    galleryDialog.addEventListener('click', (event) => {
+      const thumb = event.target.closest('[data-gallery-src]');
+      if (!thumb) {
+        return;
+      }
+
+      activeImageIndex = galleryItems.findIndex((item) => item.src === thumb.dataset.gallerySrc);
+      showImageAt(activeImageIndex, 'next');
+      imageDialog.showModal();
+    });
+
+    imageDialog.addEventListener('click', (event) => {
+      if (event.target === imageDialog) {
+        imageDialog.close();
+      }
+    });
+
+    imageDialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        showImageAt(activeImageIndex - 1, 'prev');
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        showImageAt(activeImageIndex + 1, 'next');
       }
     });
 
@@ -279,6 +411,20 @@ new-gen(betav3):
       copyButtons[1].dataset.copyCommand = wgetCommand;
       copyStatus.textContent = '';
       linuxDialog.showModal();
+    }
+
+    function showImageAt(index, direction) {
+      activeImageIndex = (index + galleryItems.length) % galleryItems.length;
+      const item = galleryItems[activeImageIndex];
+
+      imageView.classList.remove('is-changing-next', 'is-changing-prev');
+      void imageView.offsetWidth;
+      imageView.classList.add(direction === 'prev' ? 'is-changing-prev' : 'is-changing-next');
+
+      imageTitle.textContent = item.title;
+      imageView.src = item.src;
+      imageView.alt = item.title;
+      imageCount.textContent = `${activeImageIndex + 1} / ${galleryItems.length}`;
     }
 
     function commandFor(tool, url) {

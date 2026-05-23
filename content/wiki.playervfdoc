@@ -1,87 +1,26 @@
-@format PlayerVFDoc/1
+@format PlayerVFDoc/2
 @title PlayerVF Full Wiki
+@description Full PlayerVF documentation generated from PlayerVFDoc partial files.
+@hero-label Full source wiki
+@hero-title PlayerVF developer documentation.
+@hero-lead This page is generated from small PlayerVFDoc partial files. Edit the files under content/wiki and run scripts/build-wiki.mjs to rebuild the static GitHub Pages wiki.
 @source C:\Users\superstilist\Desktop\playervf\FEATURES_AND_FUNCTIONS_FULL.md
 @source C:\Users\superstilist\Desktop\playervf\lib
 
-::section overview "Overview"
-PlayerVF is a Flutter music and video player. It supports local music scanning, audio playback, video playback, playlists, favorites, lyrics, audio effects, YouTube Music search/stream/download, local network sharing, Wi-Fi Direct sharing, metadata editing, cover art extraction, and deep appearance customization.
+@stat 12 | Main wiki sections
+@stat 94 | Function index entries
+@stat lib | Source tree documented
+@stat Photos | Image blocks supported
 
-::section repo-stats "Repository stats"
-GitHub language bytes from superstilist/PlayerVf: Dart 791,200 bytes (90.25%), Python 85,432 bytes (9.75%), total 876,632 bytes.
-Remote master scan at commit a045995d6acd6b7cb2c5516e8b51dad3dc5ecca1: 85 tracked files, 59 text files, 1,040,612 total bytes, 949,566 text characters, 27,565 text lines.
-Site wiki.html: 32,223 characters and 450 lines.
-Other listed site files without wiki.html: 28,482 characters and 1,137 lines.
-
-::section architecture "Architecture"
-The app is centered around MusicService. UI pages ask this service to scan, play, queue, shuffle, repeat, load lyrics, download from YouTube, update metadata, manage playlists, and persist state. SettingsModel owns persistent user preferences for appearance, paths, video behavior, decoders, and performance.
-
-::files
-lib/main.dart => app entrypoint, theme building, app shell, navigation, keyboard shortcuts, mini player, and player overlay.
-lib/models => serializable state objects such as music, playlists, settings, lyrics, covers, and selected page state.
-lib/pages => full screens for library, favorites, playlists, player, video, YouTube Music, sharing, settings, and appearance.
-lib/services => playback, scanning, metadata parsing, sharing, YouTube, MusicBrainz, responsiveness, performance policy, and OS media controls.
-lib/widgets => reusable UI pieces such as cards, player controls, cover art, audio effects, particles, glass containers, and video surfaces.
-lib/python => desktop Python backend for YouTube search, stream resolution, download, subtitles, thumbnails, and metadata files.
-
-::section models "Models"
-Cover => extracted cover bytes/path and cover metadata.
-LyricLine / LyricsDocument => timed and plain lyrics; activeIndexAt chooses the line for the current playback position.
-Music => track/media object with id, title, artist, album, path, cover, genre, duration, favorite status, play count, last played, and date added.
-Playlist => playlist model with id, name, music IDs, timestamps, JSON import/export, and copy support.
-PageState => selected high-level page state.
-SettingsModel => paths, theme mode, theme preset, particles, font, layout, view mode, decoder mode, video behavior, share backups, and performance.
-
-::section pages "Pages"
-HomeScreen => responsive playlist and library layouts, square playlist cards, playlist collage artwork, add-playlist flow, empty state, and automatic grid counts.
-FavoritePage => favorite tracks with adaptive grid/list behavior.
-PlaylistPage => playlist overview, empty state, adaptive grid count, and playlist creation dialog.
-PlaylistDetailPage => songs inside one playlist, player opening, collage artwork, grid count, and playlist rename/edit dialog.
-PlayerPage => audio player, cover background, hero artwork, metadata, controls, queue, track details, lyrics, fullscreen lyrics, online search, custom search, and editing.
-VideoPage => local/YouTube video player, palette background, quality switching, subtitles, fullscreen video, local manifests, YouTube details, and quick queue.
-YoutubeMusicPage => YouTube Music search, bridge smoke test, downloads, option picking, downloaded mark detection, streaming, and result tiles.
-SharePage => local sharing, discovery, remote connection, sync, pause/resume/cancel, transfer UI, and status messages.
-SettingsScreen => scanning, source paths, YouTube path, cache, song gap, video settings, subtitles, decoder mode, performance, and folder import.
-AppearanceScreen => theme preset, theme mode, particles, colors, RGB, navigation position, font size, radius, glass, view mode, cards, margins, and sliders.
-
-::section services "Services"
-MusicService => central library, track, playback, queue, shuffle/repeat, playlists, lyrics, effects, subtitles, video, streaming, snapshots, and resume state.
-MusicScannerService => scans paths, reads Android hints, detects media, parses metadata, extracts covers, and creates Music objects.
-ID3Parser => parses MP3, APE, MP4/M4A, FLAC, cover art, duration, and filename fallback metadata.
-CoverExtractor => extracts cover art from local files or bundled assets.
-CoverColorService => creates cover palettes and fallback colors.
-YoutubeMusicService => search, download, stream, warm cache, resolve download directory, run helper code, and friendly errors.
-LocalShareService => HTTP share server, discovery, manifest fetch, transfer, pause/resume/cancel, duplicate checks, safe filenames.
-WifiDirectService => Android Wi-Fi Direct permissions, discovery, connection, disconnect, stop discovery, and trusted devices.
-MusicBrainzTagService => MusicBrainz search, scoring, token normalization, and recording metadata.
-PlayerAudioHandler => OS media controls, media buttons, timeline, metadata, Windows SMTC guard, and external playback state.
-PerformancePolicy => animation, particles, blur, cache scale, and visual-cost decisions.
-Responsive => viewport scaling and sizing helpers.
-
-::section widgets "Widgets"
-MusicCard => track card/list row, context menu, details, metadata edit, MusicBrainz tagging, cover picking, and add-to-playlist.
-PlaylistCard => large playlist card with cover collage and context menu.
-SmallPlaylistCard => compact playlist tile with deterministic color.
-PlaybackProgressControl => stable progress slider and position conversion.
-AudioEffectsMenu => speed, pitch, reverb, EQ presets, bands, scope, tone buttons, and reset actions.
-CoverArtTexture => local, network, blob, or fallback cover rendering.
-GlassContainer => clipped blur/translucent panel.
-ParticleSystem => sakura, snow, stars, bubbles, and rain particles.
-StableVideoSurface => stable video texture and Windows resize scheduling.
-SettingsDrawer => compact paths and YouTube download settings.
-FadeInUpAnimation => entrance animation wrapper.
-ShowUpControl => visibility toggle wrapper.
-
-::section python "Python backend"
-lib/python/api.py supports desktop YouTube Music search, audio/video downloads, subtitles, thumbnails, metadata, safe filenames, duplicate-safe output paths, stream resolution, and progress events.
-
-::section flows "Data flows"
-Local scan => settings path, scanner, ID3Parser/CoverExtractor, merge remembered state, save snapshot, update UI.
-Playback => user selects track, MusicService prepares backend, applies effects/decoders, starts playback, updates PlayerAudioHandler.
-YouTube download => search page, YoutubeMusicService, helper backend, selected options, downloaded paths, library refresh/import.
-Sharing => host server, receiver discovery, manifest fetch, selected tracks, transfer with progress and duplicate checks.
-
-::section function-index "Function index"
-Total listed in HTML wiki: 94 entries across Models, Pages, Services, Widgets, and Python.
-
-::section future "Notes"
-MusicService can be split later. Python desktop and Android helper behavior should stay aligned. Downloaded manifest formats should stay stable. SharedPreferences keys need migration if renamed. Library identity changes affect favorites, playlists, stats, and resume data. Audio effects need testing across Windows native and media_kit backends.
+@include wiki/overview.playervfpart
+@include wiki/repo-stats.playervfpart
+@include wiki/architecture.playervfpart
+@include wiki/models.playervfpart
+@include wiki/main.playervfpart
+@include wiki/pages.playervfpart
+@include wiki/services.playervfpart
+@include wiki/widgets.playervfpart
+@include wiki/python.playervfpart
+@include wiki/flows.playervfpart
+@include wiki/function-index.playervfpart
+@include wiki/future.playervfpart

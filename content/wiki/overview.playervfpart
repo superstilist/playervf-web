@@ -1,0 +1,7 @@
+::section overview "Overview"
+PlayerVF is a Flutter music and video player. It supports local music scanning, audio playback, video playback, playlists, favorites, lyrics, audio effects, YouTube Music search/stream/download, local network sharing, Wi-Fi Direct sharing, metadata editing, cover art extraction, and deep appearance customization.
+
+Configured platforms => Android, Windows, and web are present in the repository structure.
+State style => Provider and ChangeNotifier are used for app settings, player state, library updates, and page changes.
+Playback stack => Media playback uses media_kit, media_kit_video, just_audio/audio_service integration, and Windows SMTC support.
+Helpers => Python code supports YouTube Music, downloads, thumbnails, subtitles, tagging, and media metadata work.

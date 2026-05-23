@@ -1,0 +1,15 @@
+::section services "Services"
+MusicService owns library state, selected track, playback state, player backend, volume, queue IDs, shuffle/repeat, playlists, lyrics, audio effects, subtitles, video state, streaming state, snapshots, and saved playback state.
+
+MusicService => central library, track, playback, queue, shuffle/repeat, playlists, lyrics, effects, subtitles, video, streaming, snapshots, and resume state.
+MusicScannerService => scans paths, reads Android hints, detects media, parses metadata, extracts covers, and creates Music objects.
+ID3Parser => parses MP3, APE, MP4/M4A, FLAC, cover art, duration, and filename fallback metadata.
+CoverExtractor => extracts cover art from local files or bundled assets.
+CoverColorService => creates cover palettes and fallback colors.
+YoutubeMusicService => search, download, stream, warm cache, resolve download directory, run helper code, and friendly errors.
+LocalShareService => HTTP share server, discovery, manifest fetch, transfer, pause/resume/cancel, duplicate checks, safe filenames.
+WifiDirectService => Android Wi-Fi Direct permissions, discovery, connection, disconnect, stop discovery, and trusted devices.
+MusicBrainzTagService => MusicBrainz search, scoring, token normalization, and recording metadata.
+PlayerAudioHandler => OS media controls, media buttons, timeline, metadata, Windows SMTC guard, and external playback state.
+PerformancePolicy => animation, particles, blur, cache scale, and visual-cost decisions.
+Responsive => viewport scaling and sizing helpers.

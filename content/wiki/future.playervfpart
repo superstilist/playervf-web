@@ -1,0 +1,9 @@
+::section future "Notes"
+MusicService can be split later. Python desktop and Android helper behavior should stay aligned. Downloaded manifest formats should stay stable. SharedPreferences keys need migration if renamed. Library identity changes affect favorites, playlists, stats, and resume data. Audio effects need testing across Windows native and media_kit backends.
+
+MusicService => Can eventually split into playback, library, lyrics, queue, effects, and persistence services.
+Python helpers => Desktop and Android helper behavior should stay aligned when changing YouTube search, stream, or download features.
+Downloaded manifests => Video manifests and subtitle metadata should be treated as stable formats once users have files on disk.
+Settings storage => SharedPreferences key renames need migrations.
+Library identity => ID/path changes can affect favorites, playlists, stats, and resume data.
+Audio effects => Windows native filters and generic media_kit paths both need testing after changes.

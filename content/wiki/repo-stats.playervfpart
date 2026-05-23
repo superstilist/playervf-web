@@ -1,0 +1,10 @@
+::section repo-stats "Repository stats"
+GitHub language bytes from superstilist/PlayerVf: Dart 791,200 bytes (90.25%), Python 85,432 bytes (9.75%), total 876,632 bytes.
+Remote master scan at commit a045995d6acd6b7cb2c5516e8b51dad3dc5ecca1: 85 tracked files, 59 text files, 1,040,612 total bytes, 949,566 text characters, 27,565 text lines.
+Site wiki.html: generated from PlayerVFDoc partials.
+Other listed site files are plain static GitHub Pages assets.
+
+Dart => 90.25%; 791,200 language bytes on GitHub.
+Python => 9.75%; 85,432 language bytes on GitHub.
+Tracked files => 85 files; 1,040,612 total tracked bytes; 59 files are text.
+Text size => 949,566 text characters across tracked remote source files, with 27,565 lines.
