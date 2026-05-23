@@ -1,0 +1,124 @@
+{
+  "format": "player-vf-repo-stats",
+  "version": 1,
+  "scannedAt": "2026-05-22T20:53:12+02:00",
+  "source": "https://api.github.com/repos/superstilist/PlayerVf/languages",
+  "generatedFrom": {
+    "remote": "https://github.com/superstilist/PlayerVf",
+    "remoteBranch": "master",
+    "remoteCommit": "a045995d6acd6b7cb2c5516e8b51dad3dc5ecca1",
+    "scanType": "fresh shallow clone plus GitHub languages API",
+    "siteRepo": "C:\\Users\\superstilist\\WebstormProjects\\playervf-web"
+  },
+  "githubLanguages": {
+    "totalBytes": 876632,
+    "items": [
+      {
+        "language": "Dart",
+        "bytes": 791200,
+        "percent": 90.25
+      },
+      {
+        "language": "Python",
+        "bytes": 85432,
+        "percent": 9.75
+      }
+    ]
+  },
+  "remoteTrackedRepo": {
+    "trackedFiles": 85,
+    "textFiles": 59,
+    "totalBytes": 1040612,
+    "textCharacters": 949566,
+    "textLines": 27565,
+    "largestExtensions": [
+      {
+        "extension": ".dart",
+        "files": 47,
+        "bytes": 814895,
+        "characters": 814785,
+        "lines": 23742
+      },
+      {
+        "extension": ".png",
+        "files": 26,
+        "bytes": 90936,
+        "characters": 0,
+        "lines": 0
+      },
+      {
+        "extension": ".py",
+        "files": 3,
+        "bytes": 87745,
+        "characters": 87745,
+        "lines": 2316
+      },
+      {
+        "extension": ".lock",
+        "files": 1,
+        "bytes": 32748,
+        "characters": 32748,
+        "lines": 1051
+      },
+      {
+        "extension": ".gitignore",
+        "files": 1,
+        "bytes": 6330,
+        "characters": 6330,
+        "lines": 164
+      },
+      {
+        "extension": ".yaml",
+        "files": 2,
+        "bytes": 3162,
+        "characters": 3162,
+        "lines": 103
+      },
+      {
+        "extension": ".md",
+        "files": 1,
+        "bytes": 2343,
+        "characters": 2343,
+        "lines": 122
+      },
+      {
+        "extension": ".txt",
+        "files": 2,
+        "bytes": 1141,
+        "characters": 1141,
+        "lines": 27
+      },
+      {
+        "extension": ".metadata",
+        "files": 1,
+        "bytes": 998,
+        "characters": 998,
+        "lines": 31
+      },
+      {
+        "extension": "download",
+        "files": 1,
+        "bytes": 314,
+        "characters": 314,
+        "lines": 9
+      }
+    ]
+  },
+  "siteFiles": {
+    "wikiHtml": {
+      "bytes": 32223,
+      "characters": 32223,
+      "lines": 450
+    },
+    "allTrackedSiteContentListedHere": {
+      "bytes": 60705,
+      "characters": 60705,
+      "lines": 1587
+    },
+    "otherSiteFilesWithoutWikiHtml": {
+      "bytes": 28482,
+      "characters": 28482,
+      "lines": 1137
+    }
+  }
+}

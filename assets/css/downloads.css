@@ -115,7 +115,7 @@ h1 {
 
 .files {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 12px;
 }
 
@@ -125,6 +125,7 @@ h1 {
   justify-content: space-between;
   gap: 14px;
   padding: 16px;
+  min-height: 96px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface-2);
@@ -148,6 +149,7 @@ h1 {
 }
 
 .file .button {
+  flex: 0 0 auto;
   border: 0;
   cursor: pointer;
   font: inherit;
@@ -155,10 +157,12 @@ h1 {
 
 .install-dialog {
   width: min(760px, calc(100% - 32px));
+  max-height: min(720px, calc(100vh - 32px));
   padding: 0;
   border: 0;
   background: transparent;
   color: var(--text);
+  overflow: visible;
 }
 
 .install-dialog::backdrop {
@@ -167,6 +171,8 @@ h1 {
 }
 
 .install-panel {
+  max-height: min(720px, calc(100vh - 32px));
+  overflow: auto;
   padding: 24px;
 }
 
@@ -186,6 +192,7 @@ h1 {
 }
 
 .icon-button {
+  position: relative;
   width: 40px;
   height: 40px;
   flex: 0 0 auto;
@@ -196,6 +203,26 @@ h1 {
   cursor: pointer;
   font: inherit;
   font-weight: 750;
+}
+
+.close-button::before,
+.close-button::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 11px;
+  width: 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--text);
+}
+
+.close-button::before {
+  transform: rotate(45deg);
+}
+
+.close-button::after {
+  transform: rotate(-45deg);
 }
 
 .icon-button:hover {
@@ -220,6 +247,13 @@ h1 {
   border-color: var(--line);
 }
 
+.install-note {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .command-list {
   display: grid;
   gap: 10px;
@@ -227,10 +261,11 @@ h1 {
 
 .command-field {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) 40px;
+  grid-template-columns: 48px minmax(0, 1fr) 40px;
   align-items: center;
   gap: 10px;
-  padding: 10px;
+  min-height: 58px;
+  padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: #0d0f13;
@@ -245,9 +280,11 @@ h1 {
 .command-field code {
   min-width: 0;
   overflow-x: auto;
+  padding: 2px 0 4px;
   color: var(--text);
   font: 13px/1.45 Consolas, "Liberation Mono", monospace;
   white-space: nowrap;
+  scrollbar-width: thin;
 }
 
 .mini-copy {
@@ -304,10 +341,6 @@ h1 {
     padding-top: 56px;
   }
 
-  .files {
-    grid-template-columns: 1fr;
-  }
-
   .section-heading {
     align-items: flex-start;
     flex-direction: column;
@@ -327,12 +360,16 @@ h1 {
     flex-direction: column;
   }
 
+  .group {
+    padding: 18px;
+  }
+
   .install-panel {
     padding: 18px;
   }
 
   .install-head {
-    align-items: stretch;
+    align-items: flex-start;
   }
 
   .install-actions,
@@ -342,9 +379,15 @@ h1 {
 
   .command-field {
     grid-template-columns: 1fr 40px;
+    gap: 8px;
   }
 
   .command-field span {
     grid-column: 1 / -1;
+  }
+
+  .command-field code {
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 }
