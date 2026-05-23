@@ -74,7 +74,7 @@
                 <h3>Linux</h3>
                 <p>playervf.linux.zip</p>
               </div>
-              <button class="button" type="button" data-open-linux-install>Install</button>
+              <button class="button" type="button" data-open-linux-install>Download</button>
             </div>
           </div>
         </article>
@@ -115,7 +115,6 @@
 
       <div class="install-actions">
         <a class="button" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.linux.zip">Download ZIP</a>
-        <a class="button secondary" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/install_linux.sh">Open install_linux.sh</a>
       </div>
 
       <div class="command-list" aria-label="Linux terminal commands">
@@ -163,12 +162,21 @@
     document.querySelectorAll('[data-copy-command]').forEach((button) => {
       button.addEventListener('click', async () => {
         const command = button.dataset.copyCommand;
-      try {
+        try {
           await navigator.clipboard.writeText(command);
           copyStatus.textContent = 'Command copied.';
-      } catch (error) {
-          copyStatus.textContent = command;
-      }
+        } catch (error) {
+          const fallback = document.createElement('textarea');
+          fallback.value = command;
+          fallback.setAttribute('readonly', '');
+          fallback.style.position = 'fixed';
+          fallback.style.left = '-9999px';
+          document.body.appendChild(fallback);
+          fallback.select();
+          document.execCommand('copy');
+          fallback.remove();
+          copyStatus.textContent = 'Command copied.';
+        }
       });
     });
   </script>

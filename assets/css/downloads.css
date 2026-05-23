@@ -220,27 +220,75 @@ h1 {
   border-color: var(--line);
 }
 
-.script-box {
+.command-list {
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
-.script-box span {
+.command-field {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) 40px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #0d0f13;
+}
+
+.command-field span {
   color: var(--muted);
   font-size: 14px;
   font-weight: 700;
 }
 
-.script-box textarea {
-  width: 100%;
-  min-height: 126px;
-  resize: vertical;
-  padding: 14px;
+.command-field code {
+  min-width: 0;
+  overflow-x: auto;
+  color: var(--text);
+  font: 13px/1.45 Consolas, "Liberation Mono", monospace;
+  white-space: nowrap;
+}
+
+.mini-copy {
+  position: relative;
+  width: 34px;
+  height: 34px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: #0d0f13;
-  color: var(--text);
-  font: 13px/1.5 Consolas, "Liberation Mono", monospace;
+  background: var(--surface-2);
+  cursor: pointer;
+}
+
+.mini-copy::before,
+.mini-copy::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 14px;
+  border: 2px solid var(--text);
+  border-radius: 2px;
+}
+
+.mini-copy::before {
+  top: 8px;
+  left: 12px;
+  opacity: .68;
+}
+
+.mini-copy::after {
+  top: 12px;
+  left: 8px;
+  background: var(--surface-2);
+}
+
+.mini-copy:hover {
+  border-color: var(--line-strong);
+  background: var(--surface-3);
+}
+
+.mini-copy:hover::after {
+  background: var(--surface-3);
 }
 
 .copy-status {
@@ -290,5 +338,13 @@ h1 {
   .install-actions,
   .install-actions .button {
     width: 100%;
+  }
+
+  .command-field {
+    grid-template-columns: 1fr 40px;
+  }
+
+  .command-field span {
+    grid-column: 1 / -1;
   }
 }
