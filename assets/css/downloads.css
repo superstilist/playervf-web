@@ -147,6 +147,110 @@ h1 {
   margin-bottom: 0;
 }
 
+.file .button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.install-dialog {
+  width: min(760px, calc(100% - 32px));
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+}
+
+.install-dialog::backdrop {
+  background: rgba(0, 0, 0, .62);
+  backdrop-filter: blur(6px);
+}
+
+.install-panel {
+  padding: 24px;
+}
+
+.install-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.install-head h2 {
+  max-width: 560px;
+  margin-bottom: 0;
+  font-size: 28px;
+  line-height: 1.18;
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 750;
+}
+
+.icon-button:hover {
+  border-color: var(--line-strong);
+  background: var(--surface-3);
+}
+
+.install-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.install-actions .button {
+  border: 1px solid transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.install-actions .button.secondary {
+  border-color: var(--line);
+}
+
+.script-box {
+  display: grid;
+  gap: 8px;
+}
+
+.script-box span {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.script-box textarea {
+  width: 100%;
+  min-height: 126px;
+  resize: vertical;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #0d0f13;
+  color: var(--text);
+  font: 13px/1.5 Consolas, "Liberation Mono", monospace;
+}
+
+.copy-status {
+  min-height: 22px;
+  margin: 10px 0 0;
+  color: var(--accent-2);
+  font-size: 14px;
+  font-weight: 750;
+}
+
 @media (max-width: 840px) {
   main {
     padding-top: 56px;
@@ -173,5 +277,18 @@ h1 {
   .file {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .install-panel {
+    padding: 18px;
+  }
+
+  .install-head {
+    align-items: stretch;
+  }
+
+  .install-actions,
+  .install-actions .button {
+    width: 100%;
   }
 }

@@ -18,6 +18,12 @@
           "platform": "Android",
           "filename": "playervf.apk",
           "url": "https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.apk"
+        },
+        {
+          "platform": "Linux",
+          "filename": "playervf.linux.zip",
+          "url": "https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.linux.zip",
+          "installScriptUrl": "https://github.com/superstilist/PlayerVf/releases/download/Release_V1/install_linux.sh"
         }
       ]
     },

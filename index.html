@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PlayerVF Downloads</title>
-  <meta name="description" content="Download PlayerVF for Windows and Android. Simple, clean builds with stable and beta options.">
+  <meta name="description" content="Download PlayerVF for Windows, Android, and Linux. Simple, clean builds with stable and beta options.">
   <meta name="theme-color" content="#111318">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/downloads.css">
@@ -26,7 +26,7 @@
         <span class="label">Clean media player</span>
         <h1 id="hero-title">PlayerVF</h1>
         <p class="slug">Music. Video. Clean.</p>
-        <p class="lead">A simple, fast player for music and video. Pick the stable build or try the Android beta.</p>
+        <p class="lead">A simple, fast player for music and video. Pick the stable build for desktop and Android, or try the Android beta.</p>
         <div class="actions">
           <a class="button" href="#downloads">Download latest</a>
           <a class="button secondary" href="wiki.html">Read wiki</a>
@@ -68,6 +68,14 @@
               </div>
               <a class="button" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.apk">Download</a>
             </div>
+
+            <div class="file">
+              <div>
+                <h3>Linux</h3>
+                <p>playervf.linux.zip</p>
+              </div>
+              <button class="button" type="button" data-open-linux-install>Install</button>
+            </div>
           </div>
         </article>
 
@@ -95,11 +103,74 @@
     </section>
   </main>
 
+  <dialog class="install-dialog" aria-labelledby="linux-install-title">
+    <div class="install-panel panel">
+      <div class="install-head">
+        <div>
+          <p class="section-title">Linux install</p>
+          <h2 id="linux-install-title">Download ZIP or run the installer script.</h2>
+        </div>
+        <button class="icon-button" type="button" aria-label="Close Linux install window" data-close-linux-install>x</button>
+      </div>
+
+      <div class="install-actions">
+        <a class="button" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.linux.zip">Download ZIP</a>
+        <a class="button secondary" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/install_linux.sh">Open install_linux.sh</a>
+      </div>
+
+      <div class="command-list" aria-label="Linux terminal commands">
+        <label class="command-field">
+          <span>curl</span>
+          <code>curl -fsSL https://github.com/superstilist/PlayerVf/releases/download/Release_V1/install_linux.sh | bash</code>
+          <button class="mini-copy" type="button" aria-label="Copy curl command" data-copy-command="curl -fsSL https://github.com/superstilist/PlayerVf/releases/download/Release_V1/install_linux.sh | bash"></button>
+        </label>
+
+        <label class="command-field">
+          <span>wget</span>
+          <code>wget -qO- https://github.com/superstilist/PlayerVf/releases/download/Release_V1/install_linux.sh | bash</code>
+          <button class="mini-copy" type="button" aria-label="Copy wget command" data-copy-command="wget -qO- https://github.com/superstilist/PlayerVf/releases/download/Release_V1/install_linux.sh | bash"></button>
+        </label>
+      </div>
+      <p class="copy-status" role="status" aria-live="polite" data-copy-status></p>
+    </div>
+  </dialog>
+
   <footer>
     <div class="wrap footer-row">
       <span>PlayerVF Downloads</span>
       <a href="https://github.com/superstilist/PlayerVf">GitHub repository</a>
     </div>
   </footer>
+
+  <script>
+    const linuxDialog = document.querySelector('.install-dialog');
+    const copyStatus = document.querySelector('[data-copy-status]');
+
+    document.querySelector('[data-open-linux-install]').addEventListener('click', () => {
+      linuxDialog.showModal();
+    });
+
+    document.querySelector('[data-close-linux-install]').addEventListener('click', () => {
+      linuxDialog.close();
+    });
+
+    linuxDialog.addEventListener('click', (event) => {
+      if (event.target === linuxDialog) {
+        linuxDialog.close();
+      }
+    });
+
+    document.querySelectorAll('[data-copy-command]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const command = button.dataset.copyCommand;
+      try {
+          await navigator.clipboard.writeText(command);
+          copyStatus.textContent = 'Command copied.';
+      } catch (error) {
+          copyStatus.textContent = command;
+      }
+      });
+    });
+  </script>
 </body>
 </html>
