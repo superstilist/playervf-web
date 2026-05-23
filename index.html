@@ -42,61 +42,9 @@
         </div>
       </div>
 
-      <div class="downloads">
-        <article class="group panel">
-          <div class="group-head">
-            <div>
-              <h2>latest</h2>
-              <p>Recommended for daily use.</p>
-            </div>
-            <span class="badge">Latest build</span>
-          </div>
-
-          <div class="files">
-            <div class="file">
-              <div>
-                <h3>Windows</h3>
-                <p>playervf.exe</p>
-              </div>
-              <a class="button" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.exe">Download</a>
-            </div>
-
-            <div class="file">
-              <div>
-                <h3>Android</h3>
-                <p>playervf.apk</p>
-              </div>
-              <a class="button" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.apk">Download</a>
-            </div>
-
-            <div class="file">
-              <div>
-                <h3>Linux</h3>
-                <p>ZIP or install_linux.sh</p>
-              </div>
-              <button class="button" type="button" data-open-linux-install>Download</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="group panel">
-          <div class="group-head">
-            <div>
-              <h2>new-gen(betav3)</h2>
-              <p>Preview build for Android testing.</p>
-            </div>
-            <span class="badge">Beta Android build</span>
-          </div>
-
-          <div class="files">
-            <div class="file">
-              <div>
-                <h3>Android</h3>
-                <p>playervf.apk</p>
-              </div>
-              <a class="button secondary" href="https://github.com/superstilist/PlayerVf/releases/download/betav3/playervf.apk">Download</a>
-            </div>
-          </div>
+      <div class="downloads" data-downloads>
+        <article class="group panel loading-card">
+          <p>Loading downloads...</p>
         </article>
       </div>
 
@@ -114,7 +62,7 @@
       </div>
 
       <div class="install-actions">
-        <a class="button" href="https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.linux.zip">Download ZIP</a>
+        <a class="button" href="#" data-linux-zip>Download ZIP</a>
       </div>
 
       <p class="install-note">Or paste one of these commands into a Linux terminal.</p>
@@ -122,14 +70,14 @@
       <div class="command-list" aria-label="Linux terminal commands">
         <label class="command-field">
           <span>curl</span>
-          <code>curl -fsSL https://github.com/superstilist/PlayerVf/releases/download/Release_V1/install_linux.sh | bash</code>
-          <button class="mini-copy" type="button" aria-label="Copy curl command" data-copy-command="curl -fsSL https://github.com/superstilist/PlayerVf/releases/download/Release_V1/install_linux.sh | bash"></button>
+          <code data-linux-curl></code>
+          <button class="mini-copy" type="button" aria-label="Copy curl command" data-copy-command></button>
         </label>
 
         <label class="command-field">
           <span>wget</span>
-          <code>wget -qO- https://github.com/superstilist/PlayerVf/releases/download/Release_V1/install_linux.sh | bash</code>
-          <button class="mini-copy" type="button" aria-label="Copy wget command" data-copy-command="wget -qO- https://github.com/superstilist/PlayerVf/releases/download/Release_V1/install_linux.sh | bash"></button>
+          <code data-linux-wget></code>
+          <button class="mini-copy" type="button" aria-label="Copy wget command" data-copy-command></button>
         </label>
       </div>
       <p class="copy-status" role="status" aria-live="polite" data-copy-status></p>
@@ -144,12 +92,22 @@
   </footer>
 
   <script>
+    const DOWNLOAD_SOURCE_URL = 'https://raw.githubusercontent.com/superstilist/PlayerVf/master/download';
+    const FALLBACK_DOWNLOAD_TEXT = `latest:
+  windows: https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.exe
+  android: https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.apk
+  linux: https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.linux.zip
+  linux-install-script: https://github.com/superstilist/PlayerVf/releases/download/Release_V1/playervf.linux.zip
+
+new-gen(betav3):
+  android: https://github.com/superstilist/PlayerVf/releases/download/betav3/playervf.apk`;
+
+    const downloadsRoot = document.querySelector('[data-downloads]');
     const linuxDialog = document.querySelector('.install-dialog');
     const copyStatus = document.querySelector('[data-copy-status]');
-
-    document.querySelector('[data-open-linux-install]').addEventListener('click', () => {
-      linuxDialog.showModal();
-    });
+    const linuxZipLink = document.querySelector('[data-linux-zip]');
+    const linuxCurlCode = document.querySelector('[data-linux-curl]');
+    const linuxWgetCode = document.querySelector('[data-linux-wget]');
 
     document.querySelector('[data-close-linux-install]').addEventListener('click', () => {
       linuxDialog.close();
@@ -161,26 +119,221 @@
       }
     });
 
-    document.querySelectorAll('[data-copy-command]').forEach((button) => {
-      button.addEventListener('click', async () => {
-        const command = button.dataset.copyCommand;
-        try {
-          await navigator.clipboard.writeText(command);
-          copyStatus.textContent = 'Command copied.';
-        } catch (error) {
-          const fallback = document.createElement('textarea');
-          fallback.value = command;
-          fallback.setAttribute('readonly', '');
-          fallback.style.position = 'fixed';
-          fallback.style.left = '-9999px';
-          document.body.appendChild(fallback);
-          fallback.select();
-          document.execCommand('copy');
-          fallback.remove();
-          copyStatus.textContent = 'Command copied.';
-        }
-      });
+    downloadsRoot.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-open-linux-install]');
+      if (!button) {
+        return;
+      }
+
+      const linuxUrl = button.dataset.linuxUrl;
+      const installUrl = button.dataset.installUrl || linuxUrl;
+      openLinuxDialog(linuxUrl, installUrl);
     });
+
+    linuxDialog.addEventListener('click', async (event) => {
+      const button = event.target.closest('[data-copy-command]');
+      if (!button) {
+        return;
+      }
+
+      await copyText(button.dataset.copyCommand);
+    });
+
+    loadDownloads();
+
+    async function loadDownloads() {
+      try {
+        const response = await fetch(DOWNLOAD_SOURCE_URL, { cache: 'no-store' });
+        if (!response.ok) {
+          throw new Error(`Download manifest failed: ${response.status}`);
+        }
+        renderDownloads(parseDownloadFile(await response.text()));
+      } catch (error) {
+        renderDownloads(parseDownloadFile(FALLBACK_DOWNLOAD_TEXT));
+      }
+    }
+
+    function parseDownloadFile(text) {
+      const groups = [];
+      let currentGroup = null;
+
+      text.split(/\r?\n/).forEach((line) => {
+        const trimmed = line.trim();
+        if (!trimmed) {
+          return;
+        }
+
+        const groupMatch = trimmed.match(/^(.+):$/);
+        if (groupMatch && !line.startsWith(' ') && !line.startsWith('\t')) {
+          currentGroup = {
+            id: slugify(groupMatch[1]),
+            label: groupMatch[1],
+            files: []
+          };
+          groups.push(currentGroup);
+          return;
+        }
+
+        const itemMatch = trimmed.match(/^([a-z0-9-]+):\s*(https?:\/\/\S+)$/i);
+        if (!currentGroup || !itemMatch) {
+          return;
+        }
+
+        currentGroup.files.push({
+          platform: itemMatch[1],
+          url: itemMatch[2]
+        });
+      });
+
+      return groups.map((group) => {
+        const linuxFile = group.files.find((file) => file.platform === 'linux');
+        const linuxInstallFile = group.files.find((file) => file.platform === 'linux-install-script');
+        return {
+          ...group,
+          files: group.files
+            .filter((file) => file.platform !== 'linux-install-script')
+            .map((file) => ({
+              ...file,
+              installUrl: file.platform === 'linux' ? linuxInstallFile?.url || linuxFile?.url : null
+            }))
+        };
+      });
+    }
+
+    function renderDownloads(groups) {
+      downloadsRoot.replaceChildren(...groups.map((group) => createGroupCard(group)));
+    }
+
+    function createGroupCard(group) {
+      const article = document.createElement('article');
+      article.className = 'group panel';
+
+      const groupHead = document.createElement('div');
+      groupHead.className = 'group-head';
+
+      const titleBlock = document.createElement('div');
+      const title = document.createElement('h2');
+      title.textContent = group.label;
+      const description = document.createElement('p');
+      description.textContent = group.id === 'latest'
+        ? 'Recommended for daily use.'
+        : 'Preview build for testing.';
+      titleBlock.append(title, description);
+
+      const badge = document.createElement('span');
+      badge.className = 'badge';
+      badge.textContent = group.id === 'latest' ? 'Latest build' : 'Beta build';
+      groupHead.append(titleBlock, badge);
+
+      const files = document.createElement('div');
+      files.className = 'files';
+      files.append(...group.files.map((file) => createFileCard(file, group.id)));
+
+      article.append(groupHead, files);
+      return article;
+    }
+
+    function createFileCard(file, groupId) {
+      const card = document.createElement('div');
+      card.className = 'file';
+
+      const copy = document.createElement('div');
+      const title = document.createElement('h3');
+      title.textContent = formatPlatform(file.platform);
+      const filename = document.createElement('p');
+      filename.textContent = file.platform === 'linux'
+        ? linuxSubtitle(file)
+        : filenameFromUrl(file.url);
+      copy.append(title, filename);
+
+      if (file.platform === 'linux') {
+        const button = document.createElement('button');
+        button.className = 'button';
+        button.type = 'button';
+        button.textContent = 'Download';
+        button.dataset.openLinuxInstall = '';
+        button.dataset.linuxUrl = file.url;
+        button.dataset.installUrl = file.installUrl || file.url;
+        card.append(copy, button);
+        return card;
+      }
+
+      const link = document.createElement('a');
+      link.className = groupId === 'latest' ? 'button' : 'button secondary';
+      link.href = file.url;
+      link.textContent = 'Download';
+      card.append(copy, link);
+      return card;
+    }
+
+    function openLinuxDialog(linuxUrl, installUrl) {
+      linuxZipLink.href = linuxUrl;
+
+      const curlCommand = commandFor('curl', installUrl);
+      const wgetCommand = commandFor('wget', installUrl);
+      linuxCurlCode.textContent = curlCommand;
+      linuxWgetCode.textContent = wgetCommand;
+
+      const copyButtons = linuxDialog.querySelectorAll('[data-copy-command]');
+      copyButtons[0].dataset.copyCommand = curlCommand;
+      copyButtons[1].dataset.copyCommand = wgetCommand;
+      copyStatus.textContent = '';
+      linuxDialog.showModal();
+    }
+
+    function commandFor(tool, url) {
+      const isShellScript = /\.sh(?:$|[?#])/.test(url);
+      if (tool === 'curl') {
+        return isShellScript
+          ? `curl -fsSL ${url} | bash`
+          : `curl -L ${url} -o ${filenameFromUrl(url)}`;
+      }
+
+      return isShellScript
+        ? `wget -qO- ${url} | bash`
+        : `wget -O ${filenameFromUrl(url)} ${url}`;
+    }
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        copyStatus.textContent = 'Command copied.';
+      } catch (error) {
+        const fallback = document.createElement('textarea');
+        fallback.value = text;
+        fallback.setAttribute('readonly', '');
+        fallback.style.position = 'fixed';
+        fallback.style.left = '-9999px';
+        document.body.appendChild(fallback);
+        fallback.select();
+        document.execCommand('copy');
+        fallback.remove();
+        copyStatus.textContent = 'Command copied.';
+      }
+    }
+
+    function linuxSubtitle(file) {
+      return file.installUrl && file.installUrl !== file.url ? 'ZIP or install script' : filenameFromUrl(file.url);
+    }
+
+    function filenameFromUrl(url) {
+      try {
+        return decodeURIComponent(new URL(url).pathname.split('/').pop());
+      } catch (error) {
+        return url;
+      }
+    }
+
+    function formatPlatform(platform) {
+      return platform
+        .split('-')
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(' ');
+    }
+
+    function slugify(value) {
+      return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
   </script>
 </body>
 </html>
