@@ -1,0 +1,7 @@
+ytmusicapi
+yt-dlp
+requests
+mutagen
+pypinyin
+pykakasi
+Pillow
