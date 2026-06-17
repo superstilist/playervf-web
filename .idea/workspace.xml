@@ -4,57 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2ddcf10-c90c-46ea-a91f-3be62c6854a1" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/AssetManifest.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/AssetManifest.bin.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/FontManifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/NOTICES" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/assets/fonts/NotoSans-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/assets/fonts/NotoSansJP-Regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/assets/fonts/NotoSansSC-Regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/assets/images/app_ico.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/assets/images/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/assets/images/next.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/assets/images/pause.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/assets/images/play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/MaterialIcons-Regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/lib/python/api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/lib/python/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/packages/media_kit/assets/web/hls1.4.10.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/packages/wakelock_plus/assets/no_sleep.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/packages/window_manager/images/ic_chrome_close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/packages/window_manager/images/ic_chrome_maximize.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/packages/window_manager/images/ic_chrome_minimize.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/packages/window_manager/images/ic_chrome_unmaximize.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/shaders/ink_sparkle.frag" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/shaders/stretch_effect.frag" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/canvaskit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/canvaskit.js.symbols" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/canvaskit.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/chromium/canvaskit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/chromium/canvaskit.js.symbols" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/chromium/canvaskit.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/experimental_webparagraph/canvaskit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/experimental_webparagraph/canvaskit.js.symbols" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/experimental_webparagraph/canvaskit.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/skwasm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/skwasm.js.symbols" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/skwasm.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/skwasm.worker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/skwasm_heavy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/skwasm_heavy.js.symbols" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/skwasm_heavy.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/wimp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/wimp.js.symbols" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvaskit/wimp.wasm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/Icon-192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/Icon-512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/Icon-maskable-192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/Icon-maskable-512.png" afterDir="false" />
-    </list>
+    <list default="true" id="b2ddcf10-c90c-46ea-a91f-3be62c6854a1" name="Changes" comment="." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,6 +56,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\superstilist\3D Objects\playervf-web-app" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -121,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1781699746535</updated>
       <workItem from="1781699747639" duration="667000" />
-      <workItem from="1781722678139" duration="777000" />
+      <workItem from="1781722678139" duration="1401000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -131,7 +86,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781723337654</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary=".">
+      <option name="closed" value="true" />
+      <created>1781723491259</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1781723491259</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
